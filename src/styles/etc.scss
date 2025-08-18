@@ -1,0 +1,729 @@
+section.pagesec.location-bg {
+  background: #eaeaea;
+  padding: 40px 0 70px;
+  border-radius: 0 0 0 0;
+
+
+
+
+
+  @media only screen and (min-width: 1199px) {
+    padding: 130px 0;
+    border-radius: 180px 0 180px 0;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .home-whyus {
+      padding: 0 20px;
+  }
+    .location-img {
+      text-align: center;
+      img {
+        display: inline-block;
+      }
+    }
+    .location-cont {
+      width: 100%;
+    }
+  }
+}
+
+section.pagesec.home-team {
+  @media only screen and (max-width: 767px) {
+    // background: #f0f0f0;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .locationdropdown {
+    display: none;
+  }
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.card {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.groupservice .gropserspacing {
+  padding: 0px 20px 50px;
+}
+
+.siteheader ul li.about-dropdown ul.subdrop {
+  min-width: 310px;
+}
+
+/* Refer Page css start */
+
+.calender-wrap {
+  border: 1px solid var(--text-color-level3, rgba(26, 26, 26, 0.1));
+  border-radius: 8px;
+  box-shadow: 0 1px 8px 0 rgb(0 0 0/8%);
+  padding: 15px;
+
+  margin-top: 0px;
+
+  .calender-left {
+    padding: 20px 0px;
+  }
+
+  @media only screen and (min-width: 992px) {
+    display: flex;
+
+    .calender-left {
+      width: 40%;
+      padding: 80px 50px 50px 50px;
+      border-right: 1px solid var(--text-color-level3, rgba(26, 26, 26, 0.1));
+    }
+
+    .calender-right {
+      width: 60%;
+      padding: 35px 7% 40px;
+    }
+  }
+
+  #referForm .form-control {
+    margin-bottom: 14px;
+    height: 46px;
+    border: 1px solid var(--color-grey-2, #b2b2b2);
+    border-radius: 8px;
+    position: relative;
+    padding-top: 9px;
+    font-size: 14px;
+  }
+
+  #referForm .form-group {
+    position: relative;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  #referForm label {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .calender-wrap #referForm label:empty {
+    display: none;
+  }
+
+  #referForm .btn-primary {
+    // min-height: 44px;
+    // padding: 8px 16px !important;
+    // border: 1px solid transparent;
+    // border-radius: 40px;
+    // font-size: 16px;
+
+    // opacity: 1;
+  }
+
+  #referForm .help-block {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: -11px;
+    right: 0;
+    color: red;
+  }
+
+  #referForm .alert-success {
+    font-size: 16px !important;
+    padding: 6px;
+  }
+
+  #referForm .formio-component-submit .submit-success::after {
+    display: none;
+  }
+
+  .success-message-becomeprovider:empty,
+  .success-message-network:empty {
+    display: none;
+  }
+
+  section.pagesec .calender-left h3 {
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
+}
+
+.imageright .leftspe.ps-lg-4 {
+  padding-left: 0 !important;
+}
+
+.inner-header + section.pagesec {
+  @media only screen and (max-width: 767px) {
+    padding-top: 20px;
+  }
+}
+
+.sitefooter .fnav .openingLink ul li span {
+  width: 85px;
+}
+
+.story-img img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.story-img {
+  padding-bottom: 50px;
+}
+
+.imgborder button {
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  font-size: 60px;
+  color: red;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.videoWrappermap {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+
+.videoWrappermap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.success-card-test {
+  padding: 10px;
+}
+
+.testimonialmodal {
+  @media only screen and (min-width: 767px) {
+    .modal-dialog {
+      max-width: 680px;
+    }
+  }
+  .modal-header {
+    position: absolute;
+    right: -22px;
+    top: -18px;
+    z-index: 999;
+    background: #fff;
+    padding: 0 !important;
+    display: block !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    button.btn-close {
+      position: absolute;
+      top: 12px;
+      right: 11px;
+    }
+  }
+}
+
+.locationdropdown .topright:hover a.btn.btn-primary:after {
+  content: "";
+  height: 1px;
+  background: black;
+  position: absolute;
+  left: 12px;
+  bottom: 0;
+  right: 12px;
+}
+
+@media only screen and (min-width: 1199px) {
+  .siteheader ul.locationdrop li.menu-style-Services:hover > .subdrop {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1100px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1220px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+button.playbtn:after {
+  width: 20px;
+  content: "";
+  height: 20px;
+  background: #ffffff;
+  position: absolute;
+  left: 30px;
+  top: 47px;
+  z-index: 0;
+}
+
+button.playbtn svg {
+  position: relative;
+  z-index: 1;
+}
+
+.order-6 {
+  order: 6;
+}
+
+.locationslider {
+  .serviceimg {
+    padding: 0 26px;
+  }
+
+  .slick-slide img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.emergencycarepadding {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  section.pagesec {
+    h3 {
+      color: #ff1f28;
+      font-size: 40px;
+    }
+  }
+  h2 {
+    color: #000;
+  }
+
+  .emercare {
+    @media (min-width: 1100px) {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    }
+
+    .btn-primary {
+      background: #ff1f28;
+      border: none;
+    }
+  }
+
+  .emergencycare {
+    text-align: center;
+    color: #fff;
+    background-image: url("../../public/images/smileselectdental/Emergency.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+section.locationmapstyle .contactpage .contactright .righthading-box h2 {
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 47px;
+}
+
+.locationmapstyle .accordionsection p a {
+  font-size: 20px;
+  padding: 0;
+  color: #000;
+}
+
+.locationmapstyle .accordionsection p {
+  margin: 0;
+  padding: 0 0 4px;
+  color: #000;
+}
+
+section.locationmapstyle .bottombtn span img {
+  width: 20px;
+  margin-right: 7px;
+}
+
+section.locationmapstyle .bottombtn {
+  padding-top: 10px;
+}
+
+section.locationmapstyle .bottombtn a {
+  font-size: 17px;
+}
+
+ul.subdrop:empty {
+  display: none !important;
+  opacity: 0;
+}
+
+@media (max-width: 1600px) {
+  .locationslider {
+    // margin-left: -20px;
+    // margin-right: 20px;
+  }
+
+  .slidertypefirst.services-slider.locationslider {
+    .slick-next.home-arrow-slider-left {
+      left: -60px;
+    }
+
+    .slick-next {
+      right: -60px;
+    }
+  }
+}
+
+.calenderwrap {
+  #referForm .alert-success {
+    font-size: 16px !important;
+    padding: 6px;
+  }
+
+  #referForm .formio-component-submit .submit-success::after {
+    display: none;
+  }
+
+  .success-message-becomeprovider:empty,
+  .success-message-network:empty {
+    display: none;
+  }
+}
+
+.pagenewsletter {
+  @media (min-width: 1100px) {
+  width: 500px;
+  }
+
+  p.ser-car-cont {
+    padding-top: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .formio-form {
+    @media (min-width: 1100px) {
+    width: 300px;
+    }
+
+    @media (max-width: 1100px) {
+      max-width: 100%;
+
+    }
+  }
+
+  .formio-form input#email {
+    border: 1px solid #000;
+  }
+
+  .formio-form button#submit {
+    text-transform: capitalize;
+    background: #0fa3f4;
+    border-color: transparent;
+    padding: 11px 20px 11px 20px;
+    min-width: 170px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 13px;
+    opacity: 1;
+    border: 0;
+    font-weight: 400;
+  }
+}
+
+.newslettersec.calenderwrap {
+  background-image: url("../../public/images/smileselectdental/newsletter.png") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 140px 0 140px 0;
+  background-color: #e9e9e9;
+  padding: 100px;
+
+  @media (max-width: 1100px) {
+
+    border-radius: 0;
+    padding: 0px;
+
+    .pageinnercontent.pagenewsletter {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 20px;
+      border: 1px solid #dfdfdf;
+  }
+  }
+
+
+}
+
+@media (min-width: 767px) {
+  .fdesc-right button {
+    margin-left: 20px;
+  }
+}
+
+
+
+body.modalopen_pf #connectmodal_pf {
+  display: block;
+  animation: slideDownLarge 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  transition: opacity 0.4s, bottom 0.4s;
+  opacity: 1;
+  z-index: 9999;
+}
+
+body.modalopen_pf {
+  overflow: hidden;
+  padding-right: 15px;
+}
+
+#connectmodal_pf .btn-close {
+  position: absolute !important;
+  right: 0 !important;
+  color: #000 !important;
+  background: #5cb4e7;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 0 0 0 12px;
+  top: 0;
+  z-index: 999999;
+  opacity: unset;
+}
+
+body.modalopen_pf #modal-layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: 1050;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+}
+
+body.modalopen_pf{
+.modal-lg, .modal-xl {
+  max-width: 420px;
+}
+}
+
+
+@media (min-width: 992px) {
+  .modal-lg,
+  .modal-xl {
+    max-width: 630px;
+  }
+}
+
+
+
+.bookonline >div {
+  border-bottom: 1px solid #433535;
+  padding: 10px 5px;
+  display: flex;
+}
+
+.bookonline >div:last-child {
+  border: 0;
+}
+
+.bookonline >div a {
+  span{
+    margin-right: 5px;
+  }
+  color: #0075b9;
+}
+
+
+.webservice.locationhomesection .slick-slide img {
+  width: 100%;
+}
+
+.webservice.locationhomesection .serviceimg {
+  padding: 20px;
+}
+
+
+.mobiletoggle {
+  // background: #50a3f4;
+  height: 38px;
+    padding: 8px 2px 6px;
+
+     button {
+      border: 0;
+      outline: 0;
+    box-shadow: none;
+  }
+
+}
+
+
+.locationmapstyle *{
+  word-wrap: break-word;
+}
+
+
+
+.siteheader ul li.accoactive > svg{
+  rotate: 180deg;
+  right: -6px;
+}
+
+.mblocation .accordion{
+  display: flex;
+    flex-direction: column;
+
+}
+
+.siteheader ul li.mblocation{
+
+
+ 
+
+ .accordion__heading span {
+    position: absolute;
+    right: 17px;
+    top: 3px;
+}
+
+.accordion__heading {
+  padding: 6px 11px;
+  border-radius: 0;
+  font-size: 16px;
+  position: relative;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+
+  div[aria-expanded="true"] span{
+    rotate: 180deg;
+  }
+}
+
+a.sub-menu-heading {
+  background: #7e7e7e;
+  padding: 5px 12px;
+  color: #ffffff;
+}
+
+}
+
+div#referForm .form-group{
+  position: relative;
+}
+
+div#referForm .formio-errors .help-block {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: -18px;
+    right: 0;
+    color: red;
+  }
+
+
+@media (max-width: 992px) {
+.fdesc-right {
+  display: block;
+}
+
+.fdesc-right > * {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sitefooter .fdesc {
+  padding: 10px 0 0 0;
+
+}
+.sitefooter .finfo p {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 0 0 12px;
+  margin: 0;
+}
+
+.sitefooter .quicklinks ul li {
+  padding-right: 20px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.sitefooter .quicklinks ul {
+
+  flex-wrap: wrap;
+}
+.sitefooter .quicklinks {
+  padding-bottom: 25px;
+}
+
+.sitefooter .fnav ul li a {
+  font-size: 15px;
+}
+ul.pagination {
+  flex-wrap: wrap;
+}
+
+ul.pagination li a button {
+  font-size: 15px;
+  padding-left: 7px;
+  padding-right: 7px;
+  height: 38px;
+}
+
+.slidertypesecond.serviceSliderhome .home-arrow-slider-left {
+  left: 0;
+}
+
+.slidertypesecond.serviceSliderhome .slick-next {
+  display: block;
+  top: inherit !important;
+  bottom: 37%;
+}
+
+
+
+}

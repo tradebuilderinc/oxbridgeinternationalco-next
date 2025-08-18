@@ -1,0 +1,138 @@
+.contactpage{
+    
+    textarea.form-control {
+    height: auto;
+    min-height: 140px;
+    resize: none;
+}
+.gmap {
+    margin-bottom: 40px;
+}
+
+.clock {
+    padding-bottom: 8px;
+    font-size: 16px;
+}
+
+.clock b {
+    display: inline-block;
+    font-weight: 700;
+    min-width: 50px;
+}
+.formio-form {
+    position: relative;
+}
+
+.contactinfo {
+    padding-left: 0;
+    padding-top: 20px;
+    p {
+            font-size: 15px;
+            line-height: 22px;
+            font-family: inherit;
+            font-family: "Poppins", sans-serif;
+  font-weight: 400;
+        }
+}
+
+
+.contactleft {
+    @media only screen and (min-width: 992px) {
+    padding-right: 25px;
+    }
+}
+
+.contactright {
+@media only screen and (min-width: 992px) {
+    padding-left: 30px;
+}
+
+        padding-top: 15px;
+        h3 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+                font-size: 30px;
+                color: #00263f;
+            }
+}
+
+div#contactform {
+    padding-top: 16px;
+}
+
+.form-group {
+    padding-bottom: 20px;
+}
+
+.form-control {
+    min-height: 52px;
+    border-radius: 10px;
+    border-color: #000;
+    color: #666;
+    padding: 5px 25px;
+}
+
+.formio-component-submit {
+    margin-top: 10px;
+}
+
+}
+
+
+.formio-errors.invalid-feedback {
+    position: relative;
+}
+
+
+
+.formio-errors p.help-block {
+    color: red !important;
+    font-size: 11px !important;
+    position: absolute;
+    right: 10px;
+    bottom: -34px;
+}
+
+.learn-about .formio-errors p.help-block {
+    right: 10px;
+    bottom: -16px;
+}
+
+.contactpage .form-group label{
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.contactleft h1{
+    text-transform: none !important ;
+}
+.success-message.alert:empty {
+    display: none;
+}
+
+.contactpage .formio-component-button .btn.btn-primary{
+    text-transform: capitalize;
+  background: #0043c2;
+  border-color: #0043c2;
+  padding: 10px 50px;
+  min-width: 130px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  opacity: 1;
+
+}
+@media only screen and (max-width: 520px) {
+
+.contactleft {
+    padding: 20px;
+}
+
+.contactleft .col {flex: auto;}
+
+.contactpage .form-group {
+    padding-bottom: 0;
+}
+
+}

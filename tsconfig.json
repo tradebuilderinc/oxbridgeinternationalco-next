@@ -1,0 +1,68 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@providers/*": [
+        "src/providers/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@@types/*": [
+        "src/types/*"
+      ],
+      "@data/*": [
+        "src/data/*"
+      ],
+      "@style/*": [
+        "src/style/*"
+      ]
+    },
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

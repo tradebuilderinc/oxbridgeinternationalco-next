@@ -1,0 +1,192 @@
+.your{
+    line-height:50px !important;
+}
+
+
+
+
+
+.our-des{
+    font-size: 26px !important;
+    line-height: 42px  !important;
+    /* font-weight: 100 !important; */
+}
+
+.inner-page-bottom .our-plain{
+    line-height: 72px !important;
+}
+.inner-page-bottom .our-des{
+        margin-top: 10px !important;
+}
+.about-header h2 {
+    font-size: 36px !important;
+    margin: 0 0 20px 0 !important;
+    padding: 0 !important;
+}
+.about-header h1{
+    font-size: 60px !important;
+    line-height: 65px !important;
+    margin: 0;
+}
+
+.lineheight {
+    line-height: 63px !important;
+}
+.islandsmiles-whyus{
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.heart-img{
+    vertical-align: top;
+    width: 28px;
+    margin-top: -13px;
+}
+.happycustomer .story-title-name img {
+    width: 100%;
+    position: absolute;
+    top: -23px;
+    max-width: 97px;
+}
+.dentist-reviews .testimonialtabs {
+    margin-bottom: 100px;
+}
+.payment-sec {
+    padding: 60px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    height: 100%;
+}
+
+.payment-sec a{ 
+    font-weight: 600;
+    color: #000;
+}
+
+.whyus h3 {
+    margin-bottom: 6px !important;
+}
+.underLine{
+    text-decoration: underline;
+}
+.underLine a + a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #000;
+    right: 0;
+    bottom: -5px;
+}
+
+.underLine a {
+    position: relative;
+    padding: 0;
+    margin-right: 24px;
+    font-size: 18px;
+    border: none;
+}
+.saveBig {
+    padding: 12rem 0 10rem !important;
+    margin: 80px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.planSec {
+    background: #e6f8f8;
+    padding: 36px 80px 105px 36px;
+    border-radius: 13px;
+    height: 100%;
+    position: relative;
+}
+.planSec p{
+    color: #4d4d4d !important;
+}
+.bigPlantext{
+    font-size: 30px;
+    font-weight: 400;
+    color: #000;
+}
+.bigPlantext {
+    font-size: 54px;
+    font-weight: 400;
+    color: #000;
+}
+p.priceLine{
+    line-height: 36px !important; 
+    color: #000 !important;
+    margin-bottom: 30px;
+}
+.permonthText{
+    font-size: 23px !important;
+    color: #4d4d4d;
+    margin-top: 40px;
+}
+.planSec .bottombtn {
+    position: absolute;
+    bottom: 36px;
+}
+.happycustomer .success-box .story-des p img{
+    float: left;
+    margin: 6px 6px 0 0;
+}
+
+
+.happycustomer .story-title-name img{
+    position: static;
+    display: block;
+}
+
+@media (max-width:767px) {
+    .dentist-reviews .testimonialtabs{
+        margin-bottom: 0 !important;
+    }
+   
+    .your br , .second-p br{
+        display: none;
+    }
+    .appointment-btn{
+        font-size: 16px !important;
+    }
+    .second-p{
+        display: none;
+    }
+    .abtHeader p , .our-plain{
+        font-size: 45px !important;
+        margin-bottom: 20px;
+    }
+    .abtHeader h2 , .pagehead h2{
+        margin-top: 10px !important;
+        font-size: 30px !important;
+    }
+    .fade-left-p p , .our-des{
+        font-size: 20px !important;
+        line-height: 30px  !important;
+    }
+}
+@media (max-width:1199px) {
+    .payment-sec{
+        padding: 24px;
+    }
+.happycustomer .story-title-name img{
+    position: static;
+    margin: auto;
+}
+}
+@media (max-width:500px) {
+.underLine a{
+    margin-right: 15px;
+}
+.home-whyus .our-plain {
+    line-height: 44px;
+}
+}
+
+.happycustomer .slick-next{
+    margin-top:100px;
+}
+/* .homeblog .slick-next{
+    margin-top:-61px;
+} */

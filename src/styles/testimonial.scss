@@ -1,0 +1,85 @@
+.happycustomer {
+
+    @media only screen and (min-width: 992px) {
+
+    }
+
+    .success-box {
+        padding:0;
+        @media only screen and (min-width: 992px) {
+
+        padding: 0;
+        }
+        position: relative;
+        margin-bottom: 30px;
+
+        @media only screen and (min-width: 1199px) {
+            min-height: 290px;
+            padding: 0;
+            border-bottom: 1px solid #000;
+            height: 100%;
+        }
+
+        .story-des {
+            padding-bottom: 19px;
+
+            @media only screen and (min-width: 1199px) {
+                min-height: 140px;
+            }
+
+            p {
+              
+                margin: 0;
+                color: #02263e;
+            }
+        }
+
+
+
+            
+    }
+
+    .story-title-name {
+        font-weight: 400;
+        font-size: 20px;
+        padding-bottom: 30px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+
+    }
+    .story-title-name span{
+        font-weight: 300;
+
+    }
+
+    
+    .success-card {
+            padding: 0 15px;
+            @media only screen and (min-width: 992px) {
+        padding: 0 29px 0 0;
+        position: relative;
+            }
+    }
+
+    .story-title-star {
+        padding: 10px 0;
+    }
+
+    .story-title-star img {
+        width: 120px;
+    }
+
+}
+
+@media only screen and (max-width: 1199px) {
+    .happycustomer .success-card{
+        padding: 0;
+    }
+    .happycustomer .story-title-name {
+        position: static;
+        margin: auto;
+    }
+  
+}
+
