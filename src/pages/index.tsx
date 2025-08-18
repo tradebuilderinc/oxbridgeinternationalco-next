@@ -157,7 +157,30 @@ export default function Home({ ...props }) {
 <Listing/>
 
 
-            
+            {/* <div className="full">
+              <div className="item">
+                <div className="inner">
+                  <Link href="#">
+                    <div className="property-tag button alt featured">
+                      active
+                    </div>
+                    <img
+                      src="/images/3080 N 1st Street Pic.jpg"
+                      alt="San Jose"
+                      className="img-responsive imageLoader"
+                    />
+                  </Link>
+                  <div className="img-info">
+                    <h5> San Jose,CA95134</h5>
+                    <h5> $78,000,000 </h5>
+                    <ul>
+                      <li>Office</li>
+                      <li></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div> */}
           </div>
         </div>
 
