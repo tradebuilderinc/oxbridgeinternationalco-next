@@ -1243,6 +1243,28 @@ header .mobile-menu.menu-show{
     border-radius: 0;
 }
 
+
+.fixed.topmenu {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #808080cc;
+    z-index: 999;
+    height: 78px;
+
+}
+.fixed.topmenu ul li a {
+    color: #fff;
+} 
+.fixed.topmenu .text-white{
+    color: #fff !important;
+ }
+.fixed.topmenu img{
+filter: brightness(0) invert(1);
+}     
+ 
+
+
 @media (max-width: 1050px) { 
     header li a{font-size: 12px;}
     header .text-white{font-size: 12px;}

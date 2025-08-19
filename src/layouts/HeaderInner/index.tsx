@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 function HeaderInner({ ...props }) {
 
-  const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -19,10 +19,10 @@ function HeaderInner({ ...props }) {
 
       <>
         <header className={` blackbg  ${props?.page}`}>
-          <div className={` ${isScrolled ? "fixed topmenu" : "notfixed"}`}>
-            <MainInnerNav></MainInnerNav>
+  <div className={` ${isScrolled ? "fixed topmenu" : "notfixed"}`}>
+          <MainInnerNav></MainInnerNav>
 
-          </div>
+</div>
         </header>
       </>
 
