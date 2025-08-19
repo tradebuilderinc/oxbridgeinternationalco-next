@@ -75,19 +75,19 @@ export default function Faqs({ ...props }) {
                   </div>
 
                   <div className="appointment-success-message"></div>
-                  <div id="imli-form-EvDyrhXyyKHnFBhav"></div>
+                  <div id="imli-form-myr2ZxDTgEfXPYoKr"></div>
                 </div>
               </div>
 
               <div className="col-lg-5" >
                 <div className="contactright">
                   <div className="getFreeRight">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3173.050041083297!2d-121.95026592413775!3d37.31764232210404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sPlaza%20West%2C%203031%20Tisch%20Way%2C%20San%20Jose%2C%20CA%2095128!5e0!3m2!1sen!2sin!4v1707918832683!5m2!1sen!2sin"
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.876332990129!2d-121.94625002360254!3d37.321756938125496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcb21b9cac549%3A0xfc2383902e4db0e6!2s373%20S%20Monroe%20St%20STE%20204%2C%20San%20Jose%2C%20CA%2095128%2C%20USA!5e0!3m2!1sen!2sin!4v1755578191443!5m2!1sen!2sin"
                       width="100%" height="450"
                       loading="lazy"
                     ></iframe>
 
-                    <h3>Practice Leadership and Growth</h3>
+                    <h3>Oxbridgeinternationalco</h3>
 
                     <div className="row">
                       <div className="col-md-12">
@@ -98,7 +98,7 @@ export default function Faqs({ ...props }) {
                             </div>
 
                             <p>
-                              Plaza West, 3031 Tisch Way,
+                              373 South Monroe St. , Suite 204
                               <br /> San Jose, CA 95128
                             </p>
                           </div>
@@ -106,17 +106,17 @@ export default function Faqs({ ...props }) {
                             <div className="icon">
                               <FaPhoneAlt />
                             </div>
-                            <Link href="tel:+18443254754" className="call">
+                            <Link href="tel:+14084045754" className="call">
                               {" "}
-                              +1 (844) 325-4754
+                              +1 (408) 404-5754
                             </Link>
                           </div>
                           <div className="continfo iconemail">
                             <div className="icon">
                               <MdEmail />
                             </div>
-                            <Link href="mailto:info@discoverplg.com" className="call">
-                              info@discoverplg.com
+                            <Link href="mailto:sbecerra@oxbridgeinternationalco.com" className="call">
+                              sbecerra@oxbridgeinternationalco.com
                             </Link>
                           </div>
                         </div>

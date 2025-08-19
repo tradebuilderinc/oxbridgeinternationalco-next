@@ -1,5 +1,52 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap'); */
+@font-face {
+    font-family: 'futura_lt_btlight_italic';
+    src: url('./fonts/futultit.woff2') format('woff2'),
+         url('./fonts/futultit.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
+@font-face {
+    font-family: 'futura_lt_btlight';
+    src: url('./fonts/futult.woff2') format('woff2'),
+         url('./fonts/futult.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'futura_bk_btbook';
+    src: url('./fonts/tt0140m_.woff2') format('woff2'),
+         url('./fonts/tt0140m_.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'futura_md_btmedium';
+    src: url('./fonts/tt0142m_.woff2') format('woff2'),
+         url('./fonts/tt0142m_.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Copperplatebold';
+    src: url('./fonts/Copperplate-Bold.woff2') format('woff2'),
+        url('./fonts/Copperplate-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Copperplate';
+    src: url('./fonts/Copperplate.woff2') format('woff2'),
+        url('./fonts/Copperplate.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 .border-radius{
     border-radius: 15px;
@@ -13,7 +60,7 @@
     color: #eb1b23;
     font-size: 14px;
     margin-right: 6px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
 }
 .heroContent {
     margin-top: 50px;
@@ -23,10 +70,10 @@
     
     color: #000;
     font-weight: 700;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
 }
 .heroheading h1{
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     font-size: 60px;
     font-weight: 700;
     background: #1586EE;
@@ -43,7 +90,7 @@
 }
 a.learnmore{
     font-size: 14px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     font-weight: 500;
 }
 a.learnmore:hover{
@@ -52,7 +99,7 @@ a.learnmore:hover{
 
 a.learnmore span{
     font-size: 18px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
 }
 .headerCounter {
     display: flex;
@@ -69,14 +116,14 @@ a.learnmore span{
 .headCounttext p {
     font-size: 14px;
     line-height: 17px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     margin-bottom: 0;
 }
 .pagehead span {
-    color: #2c50d6;
+    color: #243249;
     font-weight: 700;
     font-size: 24px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
 }
 .trinityBox {
     background: #f1f3f9;
@@ -99,7 +146,7 @@ a.learnmore span{
     margin-bottom: 10px;
     font-size: 24px;
     font-weight: 700;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
  
 }
 .trinityBox .trinityContnet{
@@ -109,7 +156,7 @@ a.learnmore span{
 .trinityBox:hover .trinityContnet{
     position: absolute;
     font-size: 15px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     transform: translateY(-20px);
    
    
@@ -122,7 +169,7 @@ a.learnmore span{
     opacity: 0;
     transition: 0.5s;
     bottom: 50px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
 }
 
 .trinityBox:hover .bottombtn {
@@ -154,7 +201,7 @@ a.learnmore span{
     margin-bottom: 10px;
     font-size: 24px;
     font-weight: 700;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
  
 }
 
@@ -208,12 +255,12 @@ a.learnmore span{
 .clientName {
     font-size: 20px;
     line-height: 21px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
 }
 
 .clientName span {
     font-size: 14px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
 }
 
 .measurBG {
@@ -230,7 +277,7 @@ a.learnmore span{
 .measurCont span {
     font-size: 68px;
     color: #333333;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
 }
 
 .measurCont {
@@ -246,7 +293,7 @@ a.learnmore span{
 .measursubheading {
     font-weight: 700;
     font-size: 24px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     margin-top:30px;
     display: block;
     color: #333;
@@ -277,7 +324,7 @@ a.learnmore span{
    
     margin-top: 34px;
 }
-.privacywrap p{ font-size: 14px !important; font-family: "Public Sans", sans-serif;}
+.privacywrap p{ font-size: 14px !important; font-family: "Copperplate";}
 .chatboat {
     position: fixed;
     bottom: 20px;
@@ -286,7 +333,7 @@ a.learnmore span{
 
 .innerhead h1{
     font-size: 60px !important;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     font-weight: 700 !important;
     line-height: 62px !important;
 }
@@ -309,13 +356,13 @@ a.learnmore span{
     font-size: 18px;
     font-weight: 300;
     line-height: 24px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     margin-bottom: 10px;
 }
 
 .servCate span {
     font-size: 24px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     font-weight: 700;
     margin-top: 30px;
     margin-bottom: 15px;
@@ -341,7 +388,7 @@ a.learnmore span{
 .partnerSlider .ser-car-img ul li {
     font-size: 18px;
     font-weight: 300;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     line-height: 24px;
     margin-bottom: 10px;
 }
@@ -371,7 +418,7 @@ a.learnmore span{
     font-weight: 500 !important;
     margin: 0 !important;
     color: #000;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
   }
   
   .accordion__item + .accordion__item {
@@ -511,7 +558,7 @@ a.learnmore span{
     color: #2c50d6;
     font-size: 14px;
     margin-bottom: 10px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
 
 }
 
@@ -523,17 +570,16 @@ a.learnmore span{
     margin-bottom: 5PX;
     padding: 0;
     font-size: 14PX;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
 
 }
 
 .contactleft .btn.btn-primary{
     font-size: 14px;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     font-weight: 500;
-    background: rgb(20,132,237) !important;
-    background: linear-gradient(90deg, rgba(20,132,237,1) 0%, rgba(74,28,197,1) 100%) !important;
-    padding: 10px 50px 10px 30px !important;
+    background: #243249 !important;
+    padding: 10px 26px 10px 30px !important;
     border-radius: 50px;
     border: none;
     color: #fff;
@@ -541,26 +587,21 @@ a.learnmore span{
     height: 50px !important;
     top: 4px;
     position: relative;
-    min-width: 160px;
+
 
 }
 
-.contactleft .btn.btn-primary:after{
-    content: url(/images/plg/arrowcion.png);
-    position: absolute;
-    /* background: url(/images/plg/arrowcion.png) center center no-repeat ; */
-    right: 9px;
-    top: 11px;
-}
+
 
 .getFreeRight iframe {
     max-height: 320px;
 }
 .getFreeRight h3 {
     font-size: 24px !important;
-    font-family: "Public Sans", sans-serif;
+    font-family: "Copperplate";
     font-weight: 700 !important;
     margin-top: 30px;
+        margin-bottom: 26px;
 }
 
 .partnerSlider .ser-car-desc{
@@ -666,7 +707,7 @@ p.changing-sentence{
     }
     .innerhead h1 {
         font-size: 30px !important;
-        font-family: "Public Sans", sans-serif;
+        font-family: "Copperplate";
         font-weight: 700 !important;
         line-height: 37px !important;
     }
@@ -741,13 +782,13 @@ p.changing-sentence{
     .heroheading span {
         font-size: 20px;
         margin-top: 17px;
-        font-family: "Public Sans", sans-serif;
+        font-family: "Copperplate";
         display: block;
         margin-bottom: 8px;
     }
     .heroheading h1 {
         font-size: 41px !important;
-        font-family: "Public Sans", sans-serif;
+        font-family: "Copperplate";
         line-height: 40px !important;
     }
     .headerCounter {
@@ -768,16 +809,16 @@ p.changing-sentence{
     }
     .headCounttext span{
         font-size: 22px;
-        font-family: "Public Sans", sans-serif;
+        font-family: "Copperplate";
     }
     .measurCont span{
         font-size: 60px;
-        font-family: "Public Sans", sans-serif;
+        font-family: "Copperplate";
     }
 
    .siteheader .navbar-toggler {
         font-size: 27px;
-        font-family: "Public Sans", sans-serif;
+        font-family: "Copperplate";
         color: #2c50d5;
   
     }

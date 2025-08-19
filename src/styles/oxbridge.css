@@ -280,13 +280,19 @@ header .view{
     padding: 7px 30px;
     font-size: 21px;
     margin-top: 50px;}
-.book-appointment .inner button{
+.book-appointment .inner .btn.btn-primary{
 	padding: 8px 40px;
     border-radius: 25px;
     border: none;
     font-size: 18px;
     margin-top: 40px;
     font-family: 'futura_md_btmedium';
+    background: #fff;
+    color: #000;
+        text-transform: uppercase;
+}
+.book-appointment .form-control::placeholder{
+    color: #fff;
 }
 .custom-crausal h3{
 	margin-bottom: 40px;
@@ -394,12 +400,12 @@ header.secd-header a.text-white {
 	font-size: 15px;
 	font-family: 'futura_lt_btlight';
 }
-.subscribe-box form h3{
+.subscribe-box h3{
 	color: #fff;
 	font-size: 20px;
 	font-family: 'futura_lt_btlight';
 }
-.subscribe-box form input{
+.subscribe-box  input{
 	background-color: inherit;
 	    border-top: none;
     border-left: none;
@@ -411,13 +417,16 @@ header.secd-header a.text-white {
 .subscribe-box{
 	width: 30%;
 }
-.subscribe-box form button{
+.subscribe-box  .btn.btn-primary{
 	    padding: 8px 40px;
     border-radius: 25px;
     border: none;
     font-size: 18px;
     margin-top: 40px;
     font-family: 'futura_md_btmedium';
+    background: #fff !important;
+    color: #000 !important;
+    text-transform: uppercase;
 }
 .home-list h5.main-ti{	
     font-size: 28px;
@@ -1217,6 +1226,21 @@ header .mobile-menu.menu-show{
 
 .innerNavBar .text-white{
     color: #000 !important;
+}
+
+.book-appointment .col {
+    /* flex: auto !important; */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.book-appointment textarea.form-control {
+    background: none;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    padding-left: 0;
+    border-radius: 0;
 }
 
 @media (max-width: 1050px) { 

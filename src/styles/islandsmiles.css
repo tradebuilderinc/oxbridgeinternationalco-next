@@ -191,15 +191,17 @@ section.pagesec.slidertypesecond.clientSys h2 img {
 .contactleft{
     padding: 40px;
     border-radius: 15px;
-    background: #fff;
-    box-shadow: 0 0px 12px -2px #000;
+    background: #F5F5F5;
 }
 .contactleft .form-control {
     margin-bottom: 22px;
     border-radius: 15px;
     min-height: 50px;
     font-weight: 300;
-    border: 1px solid #2c50d6;
+    border: 1px solid #243249;
+}
+.contactleft .form-control::placeholder{
+    color: #000 !important;
 }
 .contactleft .form-group{
     margin-bottom: 10px;

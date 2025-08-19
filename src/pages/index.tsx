@@ -69,6 +69,22 @@ export default function Home({ ...props }) {
     ],
   };
 
+
+  
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(false);
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "/js/contact.js";
+    script.async = true;
+    document.head.appendChild(script);
+    script.onload = () => setIsLoaded(false);
+    script.onerror = () => setError(true);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, ["/js/contact.js"]);
+
   return (
     <>
       <Header></Header>
@@ -447,7 +463,10 @@ export default function Home({ ...props }) {
         <div className="container">
           <div className="inner">
             <h3>SCHEDULE AN APPOINTMENT</h3>
-            <form id="appointmentForm" className="has-validation-callback">
+            
+                  <div className="appointment-success-message"></div>
+                  <div id="imli-form-myr2ZxDTgEfXPYoKr"></div>
+            {/* <form id="appointmentForm" className="has-validation-callback">
               <div className="alert hidden" id="appointment-message"></div>
               <div className="form-group has-error">
                 <input
@@ -502,7 +521,7 @@ export default function Home({ ...props }) {
                 <input type="text" className="form-control" name="message1" />
               </div>
               <button type="submit">SCHEDULE NOW</button>
-            </form>
+            </form> */}
           </div>
         </div>
       </section>

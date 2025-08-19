@@ -42,9 +42,12 @@ const Footer = () => {
     
         <div className="mainfooter">
             <div className="subscribe-box">
-                <form id="newsletterForm" className="has-validation-callback">
+                      <h3>Subscribe to our Newsletters</h3>
+                  <div className="appointment-success-message"></div>
+                  <div id="imli-form-4WBsFF9BkN5pJcSTo"></div>
+                {/* <form id="newsletterForm" className="has-validation-callback">
                     <div className="alert hidden" id="news-message"></div>
-                    <h3>Subscribe to our Newsletters</h3>
+              <h3>Subscribe to our Newsletters</h3>
                     <div className="form-group">
                         <input type="text" className="form-control" placeholder="Name" name="firstName"
                             data-validation="required" required/>
@@ -54,7 +57,7 @@ const Footer = () => {
                             data-validation="email" required/>
                     </div>
                     <button type="submit">SUBSCRIBE</button>
-                </form>
+                </form> */}
             </div>
 
 
