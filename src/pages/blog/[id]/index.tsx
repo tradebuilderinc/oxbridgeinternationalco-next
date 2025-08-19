@@ -137,7 +137,7 @@ export default function About({ ...props }) {
         {robots && <meta name="robots" content={robots} />}
       </Head>
       <>
-        <Header />
+       <HeaderInner></HeaderInner>
         <section className="pagesec">
           <Container>
             <div className="pageinnercontent blogdetailpage">

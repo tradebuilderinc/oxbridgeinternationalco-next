@@ -21,6 +21,7 @@ import PageMeta from "@components/PageMeta";
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import { GoArrowUpRight } from "react-icons/go";
+import { HeaderInner } from "@layouts/HeaderInner";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const start =
@@ -103,16 +104,8 @@ export default function Index({ ...props }) {
         <PageMeta />
       )} */}
 
-      <div className="container-fluid home-header innerHeader"
+        <HeaderInner></HeaderInner>
 
-        style={{
-          backgroundImage: `url(/images/services/Top-background.jpg)`,
-        }}
-      >
-        <Header></Header>
-
-
-      </div>
       <section className="pagesec">
         <Container>
           <div className="row">
@@ -272,7 +265,7 @@ export default function Index({ ...props }) {
               </div>
 
 
-              <div className="col-md-12">
+              {/* <div className="col-md-12">
                 <nav
                   className={
                     pageNumber >= lastpage ? "hidden disabled" : "pt-5"
@@ -316,7 +309,7 @@ export default function Index({ ...props }) {
                     </li>
                   </ul>
                 </nav>
-              </div>
+              </div> */}
             </div>
             <div className="col-md-1"> </div>
 

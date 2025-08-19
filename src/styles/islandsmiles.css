@@ -195,7 +195,7 @@ section.pagesec.slidertypesecond.clientSys h2 img {
 }
 .contactleft .form-control {
     margin-bottom: 22px;
-    border-radius: 15px;
+    border-radius: 0;
     min-height: 50px;
     font-weight: 300;
     border: 1px solid #243249;

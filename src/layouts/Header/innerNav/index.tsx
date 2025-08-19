@@ -58,7 +58,7 @@ const MainInnerNav = (props: any) => {
                 </li>
         
                 <li>
-                    <Link href="/blogs">Insights</Link>
+                    <Link href="/blog">Insights</Link>
                 </li>
                 <li>
                     <Link href="/about">About</Link>

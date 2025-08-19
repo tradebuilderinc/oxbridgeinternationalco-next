@@ -1263,7 +1263,9 @@ header .mobile-menu.menu-show{
 filter: brightness(0) invert(1);
 }     
  
-
+.review .slick-dots{
+    display: none !important;
+}
 
 @media (max-width: 1050px) { 
     header li a{font-size: 12px;}
@@ -1303,6 +1305,15 @@ filter: brightness(0) invert(1);
 
 
 @media(max-width: 768px){
+    .review .slick-dots{
+    display:block !important;
+}
+.home-list .inner img{
+    height: auto;
+}
+.home-list .inner .img-info{
+    position: relative;
+}
     .view .first{padding-right: 0px;font-size: 12px;}
     .view .second{font-size: 12px;}
     .home-select-list select {width: 100%;}
