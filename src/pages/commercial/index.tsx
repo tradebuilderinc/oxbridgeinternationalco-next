@@ -152,7 +152,7 @@ export default function Home({ ...props }) {
                     value={selectedCity}
                     onChange={handleCity}
                   >
-                     <option value="">Select City</option>
+                    <option value="">Select City</option>
                     <option value="San Jose">San Jose</option>
                     <option value="Burlingame">Burlingame</option>
                     <option value="Palo Alto">Palo Alto</option>
@@ -219,7 +219,7 @@ export default function Home({ ...props }) {
         </div>
       </div>
 
- <Bookappointment></Bookappointment>
+      <Bookappointment></Bookappointment>
 
       <Footer></Footer>
     </>
