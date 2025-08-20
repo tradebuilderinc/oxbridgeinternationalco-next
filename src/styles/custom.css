@@ -528,6 +528,13 @@ div#searchList {
 }
 
 @media only screen and (max-width: 700px) {
+    div#member_table2 {
+    margin-top: 62px;
+}
+.selectboxx {
+    top: 79px;
+    right: 12px;
+}
     .home-list .full .inner img{
         height: auto;
     }
