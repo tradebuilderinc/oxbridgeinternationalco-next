@@ -63,10 +63,10 @@ const Footer = () => {
 
             <div className="divide-box">
                 <ul>
-                    <li><Link href="/commercials">Commercial</Link> | </li>
-                    <li><Link href="/lands">Land and Development</Link> | </li>
+                    <li><Link href="/commercial">Commercial</Link> | </li>
+                    <li><Link href="/land">Land and Development</Link> | </li>
                     <li><Link href="/team">Team</Link> | </li> 
-                    <li><Link href="/blogs">Insights</Link> | </li>
+                    <li><Link href="/blog">Insights</Link> | </li>
                     <li><Link href="/about">About</Link> | </li>
                     <li><Link href="/join-us">Join Us</Link></li>
                 </ul>
