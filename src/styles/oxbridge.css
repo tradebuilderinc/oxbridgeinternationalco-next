@@ -198,6 +198,10 @@ header .view{
 .home-list .inner{
 	position: relative;
 }
+.homeslide .inner{
+    margin: 0 10px;
+
+}
 .home-list .inner .img-info{
 	position: absolute;
     left: 0;
