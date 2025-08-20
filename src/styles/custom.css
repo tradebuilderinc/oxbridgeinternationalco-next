@@ -128,7 +128,7 @@ ul.custom-menu {
     font-size: 23px;
     font-family: Copperplatebold;
 }
-button#homepropertybutton {
+button#homepropertybutton, a#homepropertybutton {
     float: right;
     margin-right: 40px;
 }

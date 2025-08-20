@@ -9,8 +9,8 @@ const nextConfig = {
     type: "apiKey",
     server: "live",
     domainName: "http://localhost:3000",
-    API_HOST_ADMIN: "https://admin.smileselectdental.com",
-    API_HOST_ADMIN2: "https://admin.nationalorthodontist.com",
+    API_HOST_ADMIN: "https://prod.imkloud.com/api",
+    API_HOST_ADMIN2: "https://prod.imkloud.com/api",
     // siteTitle: "Dental clinic | Island Dental",
     // siteDescription:
     //   "Island Dental was built on the belief that dental care should be a blend of advanced technology and genuine, personalized care",

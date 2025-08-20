@@ -11,7 +11,6 @@ import Slider from "react-slick";
 import ReviewSlider from "@components/reviewSlider";
 import { Listing } from "@components/Listing/Index";
 
-
 export default function Home({ ...props }) {
   const { widthType } = useWindowSize();
   useEffect(() => {
@@ -69,8 +68,6 @@ export default function Home({ ...props }) {
     ],
   };
 
-
-  
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
   useEffect(() => {
@@ -85,6 +82,17 @@ export default function Home({ ...props }) {
     };
   }, ["/js/contact.js"]);
 
+  const [selectedProperty, setSelectedProperty] = useState("commercial");
+  const [selectedCountry, setSelectedCountry] = useState("united states");
+  const [selectedCity, setSelectedCity] = useState("San Jose");
+
+
+  const handleChange = (event: any) => {
+    setSelectedProperty(event.target.value); // Update state with the selected value
+  };
+
+  console.log("selectedValue", selectedProperty);
+
   return (
     <>
       <Header></Header>
@@ -95,12 +103,16 @@ export default function Home({ ...props }) {
             <div className="row">
               <div className="col-md-4">
                 <div className="select-box">
-                  <select className="form-control" id="homeprotype">
+                  <select
+                    className="form-control"
+                    value={selectedProperty}
+                    onChange={handleChange}
+                  >
                     <option value="" disabled>
                       Property Type
                     </option>
                     <option value="commercial">Commercial</option>
-                    <option value="land">Lands and Projects</option>
+                    <option value="residentials">Lands and Projects</option>
                   </select>
                 </div>
               </div>
@@ -139,13 +151,20 @@ export default function Home({ ...props }) {
                 </div>
               </div>
               <div className="col-md-12">
-                <button
+                {/* <button
                   type="button"
                   className="button"
                   id="homepropertybutton"
                 >
                   Go
-                </button>
+                </button> */}
+                 <Link
+                  href={`/${selectedProperty}?city=${selectedCity}&country=${selectedCountry}`}
+                  className="button"
+                  id="homepropertybutton"
+                >
+                  Go
+                </Link>
               </div>
             </div>
           </form>
@@ -169,9 +188,7 @@ export default function Home({ ...props }) {
 
         <div id="member_table2">
           <div className="rooms">
-
-<Listing/>
-
+            <Listing />
 
             {/* <div className="full">
               <div className="item">
@@ -463,9 +480,9 @@ export default function Home({ ...props }) {
         <div className="container">
           <div className="inner">
             <h3>SCHEDULE AN APPOINTMENT</h3>
-            
-                  <div className="appointment-success-message"></div>
-                  <div id="imli-form-myr2ZxDTgEfXPYoKr"></div>
+
+            <div className="appointment-success-message"></div>
+            <div id="imli-form-myr2ZxDTgEfXPYoKr"></div>
             {/* <form id="appointmentForm" className="has-validation-callback">
               <div className="alert hidden" id="appointment-message"></div>
               <div className="form-group has-error">
