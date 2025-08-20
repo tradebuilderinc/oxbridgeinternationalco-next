@@ -13,6 +13,7 @@ import { Listing } from "@components/Listing/Index";
 import { GetServerSidePropsContext } from "next";
 import { axiosClient, axiosHandler } from "@utils/axios";
 import { ListingData } from "@components/ListingData/Index";
+import Bookappointment from "@components/bookappointment";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   console.log("ctx", ctx?.query?.city);
@@ -218,16 +219,7 @@ export default function Home({ ...props }) {
         </div>
       </div>
 
-      <section className="book-appointment">
-        <div className="container">
-          <div className="inner">
-            <h3>SCHEDULE AN APPOINTMENT</h3>
-
-            <div className="appointment-success-message"></div>
-            <div id="imli-form-myr2ZxDTgEfXPYoKr"></div>
-          </div>
-        </div>
-      </section>
+    <Bookappointment></Bookappointment>
 
       <Footer></Footer>
     </>

@@ -10,6 +10,7 @@ import AOS from "aos";
 import Slider from "react-slick";
 import ReviewSlider from "@components/reviewSlider";
 import { Listing } from "@components/Listing/Index";
+import Bookappointment from "@components/bookappointment";
 
 export default function Home({ ...props }) {
   const { widthType } = useWindowSize();
@@ -68,19 +69,7 @@ export default function Home({ ...props }) {
     ],
   };
 
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(false);
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "/js/contact.js";
-    script.async = true;
-    document.head.appendChild(script);
-    script.onload = () => setIsLoaded(false);
-    script.onerror = () => setError(true);
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, ["/js/contact.js"]);
+
 
   const [selectedProperty, setSelectedProperty] = useState("commercial");
   const [selectedCountry, setSelectedCountry] = useState("united states");
@@ -476,72 +465,7 @@ export default function Home({ ...props }) {
         </div>
       </section>
 
-      <section className="book-appointment">
-        <div className="container">
-          <div className="inner">
-            <h3>SCHEDULE AN APPOINTMENT</h3>
-
-            <div className="appointment-success-message"></div>
-            <div id="imli-form-myr2ZxDTgEfXPYoKr"></div>
-            {/* <form id="appointmentForm" className="has-validation-callback">
-              <div className="alert hidden" id="appointment-message"></div>
-              <div className="form-group has-error">
-                <input
-                  type="text"
-                  className="form-control error"
-                  placeholder="Name"
-                  name="firstName"
-                  data-validation="required"
-                  style={{ borderColor: " rgb(185, 74, 72)" }}
-                />
-                <span className="help-block form-error">
-                  This is a required field
-                </span>
-              </div>
-              <div className="form-group has-error">
-                <input
-                  type="text"
-                  className="form-control error"
-                  placeholder="Email Address"
-                  data-validation="email"
-                  name="emailId"
-                  style={{ borderColor: " rgb(185, 74, 72)" }}
-                />
-                <span className="help-block form-error">
-                  You have not given a correct e-mail address
-                </span>
-              </div>
-              <div className="form-group has-error">
-                <input
-                  type="text"
-                  className="form-control phoneMask error"
-                  placeholder="Cellphone Number"
-                  name="contactNumber"
-                  data-force-validation-if-hidden="true"
-                  data-validation="required, custom"
-                  data-validation-regexp="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"
-                  style={{ borderColor: " rgb(185, 74, 72)" }}
-                />
-                <span className="help-block form-error">
-                  This is a required field
-                </span>
-              </div>
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Message"
-                  name="message"
-                />
-              </div>
-              <div className="form-group">
-                <input type="text" className="form-control" name="message1" />
-              </div>
-              <button type="submit">SCHEDULE NOW</button>
-            </form> */}
-          </div>
-        </div>
-      </section>
+     <Bookappointment></Bookappointment>
 
       <section className="blog-news slidertypesecond  homeblog bluebg  blogbg">
         <div className="min-container">
