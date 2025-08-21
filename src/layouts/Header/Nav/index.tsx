@@ -45,10 +45,10 @@ const MainNav = (props: any) => {
        
 
                 <li>
-                  <Link href="/commercial">Commercial</Link>
+                  <Link href="/commercials">Commercial</Link>
                 </li>
                 <li>
-                  <Link href="/land">Land and Development</Link>
+                  <Link href="/lands">Land and Development</Link>
                 </li>
               
                 <li>

@@ -19,9 +19,9 @@ export default function Home({ ...props }) {
   }, []);
 
 
-  const [selectedProperty, setSelectedProperty] = useState("commercial");
+  const [selectedProperty, setSelectedProperty] = useState("commercials");
   const [selectedCountry, setSelectedCountry] = useState("united states");
-  const [selectedCity, setSelectedCity] = useState("San Jose");
+  const [selectedCity, setSelectedCity] = useState("");
 
 
 
@@ -30,6 +30,11 @@ export default function Home({ ...props }) {
   const handleChange = (event: any) => {
     setSelectedProperty(event.target.value); // Update state with the selected value
   };
+
+    const handleCity = (event: any) => {
+    setSelectedCity(event.target.value); // Update state with the selected value
+  };
+
 
   console.log("selectedValue", selectedProperty);
 
@@ -51,7 +56,7 @@ export default function Home({ ...props }) {
                     <option value="" disabled>
                       Property Type
                     </option>
-                    <option value="commercial">Commercial</option>
+                    <option value="commercials">Commercial</option>
                     <option value="residentials">Lands and Projects</option>
                   </select>
                 </div>
@@ -74,7 +79,13 @@ export default function Home({ ...props }) {
               </div>
               <div className="col-md-4">
                 <div className="select-box">
-                  <select className="form-control" name="city" id="homeprocity">
+                  <select
+                    className="form-control"
+                    name="city"
+                    value={selectedCity}
+                    onChange={handleCity}
+                  >
+                    <option  value="">Select City</option>
                     <option value="San Jose">San Jose</option>
                     <option value="Burlingame">Burlingame</option>
                     <option value="Palo Alto">Palo Alto</option>

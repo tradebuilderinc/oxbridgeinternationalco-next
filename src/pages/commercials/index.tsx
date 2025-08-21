@@ -2,14 +2,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Header } from "@layouts/Header";
 import { Footer } from "@layouts/Footer";
-import Insight from "@components/blog/insight";
-import { useWindowSize } from "@hooks/useWindowSizeNew";
-import LeftArrow from "@components/Slider/LeftArrowNew";
-import RightArrow from "@components/Slider/RightArrowNew";
-import AOS from "aos";
-import Slider from "react-slick";
-import ReviewSlider from "@components/reviewSlider";
-import { Listing } from "@components/Listing/Index";
 import { GetServerSidePropsContext } from "next";
 import { axiosClient, axiosHandler } from "@utils/axios";
 import { ListingData } from "@components/ListingData/Index";
@@ -93,15 +85,19 @@ export default function Home({ ...props }) {
     };
   }, ["/js/contact.js"]);
 
-  const [selectedProperty, setSelectedProperty] = useState("commercial");
+  const [selectedProperty, setSelectedProperty] = useState("commercials");
   const [selectedCountry, setSelectedCountry] = useState("united states");
+  
   const [selectedCity, setSelectedCity] = useState(query?.city);
+
+
   const handleChange = (event: any) => {
     setSelectedProperty(event.target.value); // Update state with the selected value
   };
   const handleCity = (event: any) => {
     setSelectedCity(event.target.value); // Update state with the selected value
   };
+
 
   console.log("selectedCity", selectedCity);
 
@@ -123,7 +119,7 @@ export default function Home({ ...props }) {
                     <option value="" disabled>
                       Property Type
                     </option>
-                    <option value="commercial">Commercial</option>
+                    <option selected value="commercials">Commercial</option>
                     <option value="residentials">Lands and Projects</option>
                   </select>
                 </div>
@@ -152,7 +148,7 @@ export default function Home({ ...props }) {
                     value={selectedCity}
                     onChange={handleCity}
                   >
-                    <option value="">Select City</option>
+                    <option  value="">Select City</option>
                     <option value="San Jose">San Jose</option>
                     <option value="Burlingame">Burlingame</option>
                     <option value="Palo Alto">Palo Alto</option>

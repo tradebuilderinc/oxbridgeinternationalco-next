@@ -8,6 +8,7 @@ import LeftArrow from "@components/Slider/LeftArrowNew";
 import RightArrow from "@components/Slider/RightArrowNew";
 import Slider from "react-slick";
 
+
 function LandProperties({ ...props }) {
   const [list, setList] = useState([]);
 
@@ -111,7 +112,7 @@ function LandProperties({ ...props }) {
                   <div className="full" key={index}>
                     <div className="item">
                       <div className="inner">
-                        <Link href="#">
+                         <Link href={`lands/detail/${item?._id}/${item?.listingId}`}>
                           <div className="property-tag button alt featured">
                             {item?.mlsStatus}
                           </div>
@@ -150,7 +151,7 @@ function LandProperties({ ...props }) {
         <div className="d-flex justify-content-between bd-highlight mb-3">
           <div className="p-2 bd-highlight">
             <a
-              href="https://www.oxbridgeinternationalco.com/lands"
+              href="/lands"
               className="listing-btn"
             >
               ALL LISTINGS

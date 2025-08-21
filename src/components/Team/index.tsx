@@ -196,7 +196,7 @@ function Team({ ...props }) {
                 <div className="custom-show-link">
                   <h5 className="available-txt">properties available</h5>
                   <a
-                    href="https://www.oxbridgeinternationalco.com/"
+                    href="/"
                     className="show-link"
                   >
                     show

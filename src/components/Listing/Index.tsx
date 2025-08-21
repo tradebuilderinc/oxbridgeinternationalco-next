@@ -5,10 +5,11 @@ import { Image } from "react-bootstrap";
 import { apiBaseURL } from "@config/api";
 import FormatPrice from "@components/helper/FormatPrice";
 
+
 function Listing({ ...props }) {
   const [list, setList] = useState([]);
   const [mlsStatus, setMlsStatus] = useState("");
-  const [loading, setLoading] = useState("none");
+  const [loading, setLoading] = useState("Active");
 
   const ListingData = async (mlsStatus: any) => {
     let credentials = {
@@ -76,8 +77,8 @@ function Listing({ ...props }) {
             <option value="">All Listings</option>
             <option value="active">Active Listings</option>
             <option value="pending">Pending/InContract</option>
-            <option value="sold">Recently Sold</option>
-            <option value="closed">Off Market</option>
+            <option value="closed">Recently Sold</option>
+            <option value="deal room">Off Market</option>
             <option value="featured">Featured</option>
           </select>
         </div>
@@ -97,7 +98,7 @@ function Listing({ ...props }) {
                     <div className="full" key={index}>
                       <div className="item">
                         <div className="inner">
-                          <Link href="#">
+                          <Link href={`commercials/detail/${item?._id}/${item?.listingId}`}>
                             <div className="property-tag button alt featured">
                               {item?.mlsStatus}
                             </div>
@@ -119,7 +120,17 @@ function Listing({ ...props }) {
                               {`${item?.stateOrProvince}${item?.postalCode}`}
                             </h5>
                             <h5>
-                              <FormatPrice price={item?.listPrice} />
+                              {item?.listPrice == "0" ||
+                              item?.listPrice == "1" ||
+                              item?.listPrice == "00" ||
+                              item?.listPrice == 0 ? (
+                                <Link href="tel:+14084045754">
+                                 
+                                  Call for Price
+                                </Link>
+                              ) : (
+                                <FormatPrice price={item?.listPrice} />
+                              )}
                             </h5>
                             <ul>
                               <li>{item?.propertySubType}</li>
