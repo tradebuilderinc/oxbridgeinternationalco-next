@@ -83,9 +83,11 @@ const { listing, query } = props;
     };
   }, ["/js/contact.js"]);
 
-  const [selectedProperty, setSelectedProperty] = useState("commercial");
+  const [selectedProperty, setSelectedProperty] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("united states");
   const [selectedCity, setSelectedCity] = useState(query?.city);
+
+
   const handleChange = (event: any) => {
     setSelectedProperty(event.target.value); // Update state with the selected value
   };
@@ -110,11 +112,9 @@ const { listing, query } = props;
                     value={selectedProperty}
                     onChange={handleChange}
                   >
-                    <option value="" disabled>
-                      Property Type
-                    </option>
-                    <option value="commercial">Commercial</option>
-                    <option selected value="residentials">Lands and Projects</option>
+                    <option selected value="">Property Type </option>
+                    <option value="commercials">Commercial</option>
+                    <option  value="residentials">Lands and Projects</option>
                   </select>
                 </div>
               </div>
@@ -196,7 +196,7 @@ const { listing, query } = props;
 
         <div id="member_table2">
           <div className="rooms">
-            <ListingData  data={listing} />
+            <ListingData  data={listing} page="lands" />
           </div>
         </div>
 

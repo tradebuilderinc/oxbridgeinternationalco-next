@@ -19,7 +19,7 @@ function ListingData({ ...props }) {
             <div className="full" key={index}>
               <div className="item">
                 <div className="inner">
-                    <Link href={`commercials/detail/${item?._id}/${item?.listingId}`}>
+                    <Link href={`${props?.page}/detail/${item?._id}/${item?.listingId}`}>
                     <div className="property-tag button alt featured">
                       {item?.mlsStatus}
                     </div>
