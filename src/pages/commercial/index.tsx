@@ -109,7 +109,7 @@ export default function Home({ ...props }) {
     <>
       <Header></Header>
 
-      <div className="select-list home-select-list">
+      <div className="select-list home-select-list" id="searchmain">
         <div className="min-container">
           <form className="search-form">
             <div className="row">
@@ -176,13 +176,13 @@ export default function Home({ ...props }) {
                 >
                   Go
                 </button> */}
-                <a
-                  href={`/${selectedProperty}?city=${selectedCity}&country=${selectedCountry}`}
+                <Link
+                  href={`/${selectedProperty}?city=${selectedCity}&country=${selectedCountry}#searchmain`}
                   className="button"
                   id="homepropertybutton"
                 >
                   Go
-                </a>
+                </Link>
               </div>
             </div>
           </form>
@@ -190,7 +190,7 @@ export default function Home({ ...props }) {
       </div>
 
       <div className="min-container home-list featured-homelist">
-        <h5 className="main-ti">Oxbridge Listings</h5>
+        {/* <h5 className="main-ti">Oxbridge Listings</h5>
         <h6 className="main-pa">COMMERCIAL</h6>
 
         <div className="selectboxx">
@@ -202,7 +202,7 @@ export default function Home({ ...props }) {
             <option value="Closed">Off Market</option>
             <option value="Featured">Featured</option>
           </select>
-        </div>
+        </div> */}
 
         <div id="member_table2">
           <div className="rooms">
@@ -210,13 +210,7 @@ export default function Home({ ...props }) {
           </div>
         </div>
 
-        <div className="d-flex justify-content-between bd-highlight mb-3">
-          <div className="p-2 bd-highlight">
-            <a href="/commercials" className="listing-btn">
-              ALL LISTINGS
-            </a>
-          </div>
-        </div>
+       
       </div>
 
       <Bookappointment></Bookappointment>

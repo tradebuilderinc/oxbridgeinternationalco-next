@@ -16,6 +16,8 @@ ul{
 }
 :focus{outline: none;}
 .form-control:focus{background-color: inherit;border-color: #86754D;}
+
+body{color: #212529;}
 @font-face {
     font-family: 'futura_lt_btlight_italic';
     src: url('./fonts/futultit.woff2') format('woff2'),
@@ -1361,4 +1363,12 @@ filter: brightness(0) invert(1);
 }
 @media(max-width: 480px){
     header img {width: 180px;}
+}
+
+
+
+.loading {
+    display: block;
+    text-align: center;
+    padding: 40px 0 100px 0;
 }

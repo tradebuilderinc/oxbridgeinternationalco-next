@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     API_HOST: "https://prod.imkloud.com/api",
-    apiKey: "BTHaJyet524S7dDeyzr4m3TLnmgiMM",
+    apiKey: "4MrokA3pBgjfsguf2M9aymTQDREqnE",
     orgId: "PdgT9y6tZ5XRtWaCb",
     userId: "8aumx9G9iTZxhp8Dc",
     type: "apiKey",

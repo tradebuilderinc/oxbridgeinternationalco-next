@@ -34,6 +34,9 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     originatingSystemName: "myListings",
     skip: 0,
     filter: {
+      minPrice: ctx?.query?.minPrice ? ctx?.query?.minPrice : '',
+      maxPrice: ctx?.query?.maxPrice ? ctx?.query?.maxPrice : '',
+
       uri: "listings",
       propertySubType: [
         "Industrial",
@@ -93,9 +96,13 @@ export default function Home({ ...props }) {
     };
   }, ["/js/contact.js"]);
 
-  const [selectedProperty, setSelectedProperty] = useState("commercial");
+  const [selectedProperty, setSelectedProperty] = useState("residentials");
   const [selectedCountry, setSelectedCountry] = useState("united states");
   const [selectedCity, setSelectedCity] = useState(query?.city);
+
+  const [maxPrice, setMaxPrice] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+
   const handleChange = (event: any) => {
     setSelectedProperty(event.target.value); // Update state with the selected value
   };
@@ -103,13 +110,22 @@ export default function Home({ ...props }) {
     setSelectedCity(event.target.value); // Update state with the selected value
   };
 
-  console.log("selectedCity", selectedCity);
+  const handleMinPrice = (event: any) => {
+    setMinPrice(event.target.value); // Update state with the selected value
+  };
+
+  const handleMaxPrice = (event: any) => {
+    setMaxPrice(event.target.value); // Update state with the selected value
+  };
+
+  console.log("minPrice", minPrice);
+  console.log("query", query);
 
   return (
     <>
       <Header></Header>
 
-      <div className="select-list home-select-list">
+      <div className="select-list home-select-list" id="searchmain">
         <div className="min-container">
           <form className="search-form">
             <div className="row">
@@ -124,7 +140,9 @@ export default function Home({ ...props }) {
                       Property Type
                     </option>
                     <option value="commercial">Commercial</option>
-                    <option value="residentials">Lands and Projects</option>
+                    <option selected value="residentials">
+                      Lands and Projects
+                    </option>
                   </select>
                 </div>
               </div>
@@ -152,7 +170,7 @@ export default function Home({ ...props }) {
                     value={selectedCity}
                     onChange={handleCity}
                   >
-                     <option value="">Select City</option>
+                    <option value="">Select City</option>
                     <option value="San Jose">San Jose</option>
                     <option value="Burlingame">Burlingame</option>
                     <option value="Palo Alto">Palo Alto</option>
@@ -168,7 +186,182 @@ export default function Home({ ...props }) {
                   </select>
                 </div>
               </div>
-              <div className="col-md-12">
+
+              {/*  */}
+
+              <div className="col-md-4">
+                <div className="select-box">
+                  <select
+                    className="form-control"
+                    name="min"
+                    value={minPrice}
+                    onChange={handleMinPrice}
+                  >
+                    <option value="">Price Min</option>
+                    <option value="25000">$25,000</option>
+                    <option value="50000">$50,000</option>
+                    <option value="75000">$75,000</option>
+                    <option value="100000">$100,000</option>
+                    <option value="125000">$125,000</option>
+                    <option value="150000">$150,000</option>
+                    <option value="175000">$175,000</option>
+                    <option value="200000">$200,000</option>
+                    <option value="225000">$225,000</option>
+                    <option value="250000">$250,000</option>
+                    <option value="275000">$275,000</option>
+                    <option value="300000">$300,000</option>
+                    <option value="325000">$325,000</option>
+                    <option value="350000">$350,000</option>
+                    <option value="375000">$375,000</option>
+                    <option value="400000">$400,000</option>
+                    <option value="425000">$425,000</option>
+                    <option value="450000">$450,000</option>
+                    <option value="475000">$475,000</option>
+                    <option value="500000">$500,000</option>
+                    <option value="525000">$525,000</option>
+                    <option value="550000">$550,000</option>
+                    <option value="575000">$575,000</option>
+                    <option value="600000">$600,000</option>
+                    <option value="625000">$625,000</option>
+                    <option value="650000">$650,000</option>
+                    <option value="675000">$675,000</option>
+                    <option value="700000">$700,000</option>
+                    <option value="725000">$725,000</option>
+                    <option value="750000">$750,000</option>
+                    <option value="775000">$775,000</option>
+                    <option value="800000">$800,000</option>
+                    <option value="825000">$825,000</option>
+                    <option value="850000">$850,000</option>
+                    <option value="875000">$875,000</option>
+                    <option value="900000">$900,000</option>
+                    <option value="925000">$925,000</option>
+                    <option value="950000">$950,000</option>
+                    <option value="975000">$975,000</option>
+                    <option value="1000000">$1,000,000</option>
+                    <option value="1100000">$1,100,000</option>
+                    <option value="1200000">$1,200,000</option>
+                    <option value="1250000">$1,250,000</option>
+                    <option value="1300000">$1,300,000</option>
+                    <option value="1400000">$1,400,000</option>
+                    <option value="1500000">$1,500,000</option>
+                    <option value="1600000">$1,600,000</option>
+                    <option value="1700000">$1,700,000</option>
+                    <option value="1750000">$1,750,000</option>
+                    <option value="1800000">$1,800,000</option>
+                    <option value="1900000">$1,900,000</option>
+                    <option value="2000000">$2,000,000</option>
+                    <option value="2250000">$2,250,000</option>
+                    <option value="2500000">$2,500,000</option>
+                    <option value="2750000">$2,750,000</option>
+                    <option value="3000000">$3,000,000</option>
+                    <option value="3250000">$3,250,000</option>
+                    <option value="3500000">$3,500,000</option>
+                    <option value="3750000">$3,750,000</option>
+                    <option value="4000000">$4,000,000</option>
+                    <option value="4250000">$4,250,000</option>
+                    <option value="4500000">$4,500,000</option>
+                    <option value="4750000">$4,750,000</option>
+                    <option value="5000000">$5,000,000</option>
+                    <option value="6000000">$6,000,000</option>
+                    <option value="7000000">$7,000,000</option>
+                    <option value="8000000">$8,000,000</option>
+                    <option value="9000000">$9,000,000</option>
+                    <option value="10000000">$10,000,000</option>
+                    <option value="15000000">$15,000,000</option>
+                    <option value="20000000">$20,000,000</option>
+                    <option value="25000000">$25,000,000</option>
+                    <option value="30000000">$30,000,000</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="col-md-4">
+                <div className="select-box">
+                  <select
+                    className="form-control"
+                    name="min"
+                    value={maxPrice}
+                    onChange={handleMaxPrice}
+                  >
+                    <option value="">Price Max</option>
+                    <option value="25000">$25,000</option>
+                    <option value="50000">$50,000</option>
+                    <option value="75000">$75,000</option>
+                    <option value="100000">$100,000</option>
+                    <option value="125000">$125,000</option>
+                    <option value="150000">$150,000</option>
+                    <option value="175000">$175,000</option>
+                    <option value="200000">$200,000</option>
+                    <option value="225000">$225,000</option>
+                    <option value="250000">$250,000</option>
+                    <option value="275000">$275,000</option>
+                    <option value="300000">$300,000</option>
+                    <option value="325000">$325,000</option>
+                    <option value="350000">$350,000</option>
+                    <option value="375000">$375,000</option>
+                    <option value="400000">$400,000</option>
+                    <option value="425000">$425,000</option>
+                    <option value="450000">$450,000</option>
+                    <option value="475000">$475,000</option>
+                    <option value="500000">$500,000</option>
+                    <option value="525000">$525,000</option>
+                    <option value="550000">$550,000</option>
+                    <option value="575000">$575,000</option>
+                    <option value="600000">$600,000</option>
+                    <option value="625000">$625,000</option>
+                    <option value="650000">$650,000</option>
+                    <option value="675000">$675,000</option>
+                    <option value="700000">$700,000</option>
+                    <option value="725000">$725,000</option>
+                    <option value="750000">$750,000</option>
+                    <option value="775000">$775,000</option>
+                    <option value="800000">$800,000</option>
+                    <option value="825000">$825,000</option>
+                    <option value="850000">$850,000</option>
+                    <option value="875000">$875,000</option>
+                    <option value="900000">$900,000</option>
+                    <option value="925000">$925,000</option>
+                    <option value="950000">$950,000</option>
+                    <option value="975000">$975,000</option>
+                    <option value="1000000">$1,000,000</option>
+                    <option value="1100000">$1,100,000</option>
+                    <option value="1200000">$1,200,000</option>
+                    <option value="1250000">$1,250,000</option>
+                    <option value="1300000">$1,300,000</option>
+                    <option value="1400000">$1,400,000</option>
+                    <option value="1500000">$1,500,000</option>
+                    <option value="1600000">$1,600,000</option>
+                    <option value="1700000">$1,700,000</option>
+                    <option value="1750000">$1,750,000</option>
+                    <option value="1800000">$1,800,000</option>
+                    <option value="1900000">$1,900,000</option>
+                    <option value="2000000">$2,000,000</option>
+                    <option value="2250000">$2,250,000</option>
+                    <option value="2500000">$2,500,000</option>
+                    <option value="2750000">$2,750,000</option>
+                    <option value="3000000">$3,000,000</option>
+                    <option value="3250000">$3,250,000</option>
+                    <option value="3500000">$3,500,000</option>
+                    <option value="3750000">$3,750,000</option>
+                    <option value="4000000">$4,000,000</option>
+                    <option value="4250000">$4,250,000</option>
+                    <option value="4500000">$4,500,000</option>
+                    <option value="4750000">$4,750,000</option>
+                    <option value="5000000">$5,000,000</option>
+                    <option value="6000000">$6,000,000</option>
+                    <option value="7000000">$7,000,000</option>
+                    <option value="8000000">$8,000,000</option>
+                    <option value="9000000">$9,000,000</option>
+                    <option value="10000000">$10,000,000</option>
+                    <option value="15000000">$15,000,000</option>
+                    <option value="20000000">$20,000,000</option>
+                    <option value="25000000">$25,000,000</option>
+                    <option value="30000000">$30,000,000</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="col-md-4">
                 {/* <button
                   type="button"
                   className="button"
@@ -176,13 +369,19 @@ export default function Home({ ...props }) {
                 >
                   Go
                 </button> */}
-                <a
-                  href={`/${selectedProperty}?city=${selectedCity}&country=${selectedCountry}`}
+                <Link
+                  href={`/${selectedProperty}?city=${
+                    selectedCity ? selectedCity : "San Jose"
+                  }&minPrice=${minPrice ? minPrice : ""}&maxPrice=${
+                    maxPrice ? maxPrice : ""
+                  }&country=${
+                    selectedCountry ? selectedCountry : "united states"
+                  }#searchmain`}
                   className="button"
                   id="homepropertybutton"
                 >
                   Go
-                </a>
+                </Link>
               </div>
             </div>
           </form>
@@ -190,7 +389,7 @@ export default function Home({ ...props }) {
       </div>
 
       <div className="min-container home-list featured-homelist">
-        <h5 className="main-ti">Oxbridge Listings</h5>
+        {/* <h5 className="main-ti">Oxbridge Listings</h5>
         <h6 className="main-pa">COMMERCIAL</h6>
 
         <div className="selectboxx">
@@ -202,24 +401,16 @@ export default function Home({ ...props }) {
             <option value="Closed">Off Market</option>
             <option value="Featured">Featured</option>
           </select>
-        </div>
+        </div> */}
 
         <div id="member_table2">
           <div className="rooms">
             <ListingData data={listing} />
           </div>
         </div>
-
-        <div className="d-flex justify-content-between bd-highlight mb-3">
-          <div className="p-2 bd-highlight">
-            <a href="/commercials" className="listing-btn">
-              ALL LISTINGS
-            </a>
-          </div>
-        </div>
       </div>
 
-    <Bookappointment></Bookappointment>
+      <Bookappointment></Bookappointment>
 
       <Footer></Footer>
     </>

@@ -180,10 +180,10 @@ const { listing, query } = props;
       </div>
 
       <div className="min-container home-list featured-homelist">
-        <h5 className="main-ti">Oxbridge Listings</h5>
-        <h6 className="main-pa">COMMERCIAL</h6>
+        {/* <h5 className="main-ti">Oxbridge Listings</h5>
+        <h6 className="main-pa">COMMERCIAL</h6> */}
 
-        <div className="selectboxx">
+        {/* <div className="selectboxx">
           <select>
             <option value="Active">Active Listings</option>
             <option value="">All Listings</option>
@@ -192,7 +192,7 @@ const { listing, query } = props;
             <option value="Closed">Off Market</option>
             <option value="Featured">Featured</option>
           </select>
-        </div>
+        </div> */}
 
         <div id="member_table2">
           <div className="rooms">
