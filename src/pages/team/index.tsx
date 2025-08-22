@@ -1,75 +1,14 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Header } from "@layouts/Header";
 import { Footer } from "@layouts/Footer";
-import Insight from "@components/blog/insight";
 import { useWindowSize } from "@hooks/useWindowSizeNew";
 import LeftArrow from "@components/Slider/LeftArrowNew";
 import RightArrow from "@components/Slider/RightArrowNew";
-import AOS from "aos";
-import Slider from "react-slick";
-import ReviewSlider from "@components/reviewSlider";
-import { Listing } from "@components/Listing/Index";
 import { HeaderInner } from "@layouts/HeaderInner";
 import Team from "@components/Team";
 
 export default function Home({ ...props }) {
   const { widthType } = useWindowSize();
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
-  var settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 8000,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    mobileFirst: true,
-    nextArrow: (
-      <RightArrow
-        to="next"
-        className=""
-        onClick={() => console.log("right arrow")}
-        customClass="home3 home-arrow-slider-right"
-      />
-    ),
-    prevArrow: (
-      <LeftArrow
-        to="prev"
-        className=""
-        onClick={() => console.log("left arrow")}
-        customClass="home3  home-arrow-slider-left"
-      />
-    ),
-
-    responsive: [
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 2,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 1,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 300,
-        settings: {
-          slidesToShow: 1,
-          dots: true,
-        },
-      },
-    ],
-  };
-
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
   useEffect(() => {
@@ -98,21 +37,9 @@ export default function Home({ ...props }) {
           </h6>
 
           <div className="mainpageteam">
+            <Team id="8JruLKu6eTqyc6ZH7" />
 
-
- <Team id="8JruLKu6eTqyc6ZH7" />
-
-
-
-
-
-
-
-
-
-
-
-            <div className="teammember2">
+            {/* <div className="teammember2">
               <div className="row">
                 <div className="col-md-6">
                   <div className="inner text-right">
@@ -287,10 +214,7 @@ export default function Home({ ...props }) {
               </div>
               <div className="custom-show-link">
                 <h5 className="available-txt">properties available</h5>
-                <a
-                  href="/"
-                  className="show-link"
-                >
+                <a href="/" className="show-link">
                   show
                 </a>
               </div>
@@ -976,7 +900,9 @@ export default function Home({ ...props }) {
                   show
                 </a>
               </div>
-            </div>
+            </div> */}
+
+
           </div>
         </div>
       </section>

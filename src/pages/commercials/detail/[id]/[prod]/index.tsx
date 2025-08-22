@@ -14,10 +14,9 @@ import { GetServerSidePropsContext } from "next";
 import { axiosClient, axiosHandler } from "@utils/axios";
 import { ListingData } from "@components/ListingData/Index";
 import Bookappointment from "@components/bookappointment";
+import { HeaderInner } from "@layouts/HeaderInner";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
-  
-
   let credentials = {
     userId: process.env.userId,
     orgId: process.env.orgId,
@@ -41,7 +40,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   let data;
   if (listing?.success) {
     data = {
-      listing: listing?.data?.data,
+      listing: listing?.data?.data[0],
       query: ctx?.query,
     };
   } else {
@@ -56,14 +55,11 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 export default function Home({ ...props }) {
   const { listing, query } = props;
 
-console.log("ctx", props);
-
-
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "/js/contact.js";
+    script.src = "/js/talktoouragent.js";
     script.async = true;
     document.head.appendChild(script);
     script.onload = () => setIsLoaded(false);
@@ -71,24 +67,110 @@ console.log("ctx", props);
     return () => {
       document.head.removeChild(script);
     };
-  }, ["/js/contact.js"]);
+  }, ["/js/talktoouragent.js"]);
 
-  const [selectedProperty, setSelectedProperty] = useState("commercial");
-  const [selectedCountry, setSelectedCountry] = useState("united states");
-  const [selectedCity, setSelectedCity] = useState(query?.city);
-  const handleChange = (event: any) => {
-    setSelectedProperty(event.target.value); // Update state with the selected value
-  };
-  const handleCity = (event: any) => {
-    setSelectedCity(event.target.value); // Update state with the selected value
-  };
-
-  console.log("selectedCity", selectedCity);
+  console.log("listinglisting", listing);
 
   return (
     <>
-      <Header></Header>
-      gggg
+      <HeaderInner></HeaderInner>
+
+      <section className="lis-detail-box">
+        <div className="min-container">
+          <h3>
+            {listing?.streetName}, {listing?.city}
+          </h3>
+          <div className="owl-carousel owl-theme detail-box">
+            <div className="item">
+              <div className="inner">
+                <img
+                  src={
+                    listing?.photoUrls
+                      ? listing?.photoUrls[0]
+                      : "https://oxbridgeinternationalco.com/assets//images/noAvatar.png"
+                  }
+                  alt={listing?.streetName}
+                  className="img-fluid"
+                />
+
+                <div className="img-txt">
+                  <div className="d-flex justify-content-between bd-highlight mb-3">
+                    <span className="second">{listing?.mlsStatus}</span>
+                  </div>
+                </div>
+
+                <h6>
+                  {" "}
+                  {listing?.streetName}, {listing?.stateOrProvince}{" "}
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="min-container property-type">
+        <div className="row">
+          <div className="col-md-7">
+            <div className="first-box border">
+              <h5>property type</h5>
+              <h6>{listing?.propertySubType}</h6>
+            </div>
+
+            <div className="first-box border">
+              <h5>property status</h5>
+              <h6>{listing?.mlsStatus}</h6>
+            </div>
+
+            <div className="second-box border">
+              <h5>features</h5>
+              {listing?.publicRemarks}
+            </div>
+
+            <div className="second-box">
+              <h5>specifications</h5>
+              <p> {listing?.salesNotes}</p>
+            </div>
+          </div>
+          <div className="col-md-5">
+            <div className="talk-agent">
+              <h4>talk to our agent</h4>
+
+{/* <AgentInfo></AgentInfo> */}
+
+
+
+              <img
+                id="agentimg"
+                src="https://oxbridgeinternationalco.com/assets/images/noAvatar.png"
+                className="noagentimgdetailpage img-fluid imageLoader"
+              />
+
+              <h5 className="border">Steve Becerra</h5>
+
+              <ul>
+                <li>LICENSE NUMBER #00838722</li>
+
+                <li>EMAIL sbecerra@oxbridgeinternationalco.com</li>
+
+                <li>OFFICE </li>
+                <li>
+                  CELL <span className="phoneMask">4088916453</span>{" "}
+                </li>
+              </ul>
+
+              <div className="form-box">
+                <h5>I am interested in North First Street , CA </h5>
+
+                <div id="mainform" className="pt-3">
+                  <div className="success-message-becomeprovider alert alert-success"></div>
+                  <div id="imli-form-9s4CRGtTMug7tXehQ">Loading...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <Footer></Footer>
     </>
   );

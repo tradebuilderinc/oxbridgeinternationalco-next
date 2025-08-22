@@ -1372,3 +1372,11 @@ filter: brightness(0) invert(1);
     text-align: center;
     padding: 40px 0 100px 0;
 }
+
+.mainpageteam .row .teammember2:nth-child(even) .row .col-md-6 + .col-md-6 {
+    order: 1;
+}
+
+.mainpageteam .row .teammember2:nth-child(even) .row .col-md-6 {
+    order: 2;
+}

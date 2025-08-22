@@ -52,7 +52,7 @@ function Team({ ...props }) {
     );
     const featuredDoctor = await featured.json();
 
-    console.log("ffe", featuredDoctor?.data);
+   
 
     // setFeatDoctor(featuredDoctor?.data);
 
@@ -92,6 +92,10 @@ function Team({ ...props }) {
   useEffect(() => {
     doctorsGroups();
   }, []);
+
+
+
+   console.log("featDoctor", featDoctor);
 
   return (
     <>
@@ -156,7 +160,7 @@ function Team({ ...props }) {
                   </div>
                 </div>
 
-                <div className="team-list">
+                {/* <div className="team-list">
                   <h5>SPECIALITIES</h5>
                   <ul>
                     <li>Commercial</li>
@@ -193,6 +197,7 @@ function Team({ ...props }) {
                     </li>
                   </ul>
                 </div>
+
                 <div className="custom-show-link">
                   <h5 className="available-txt">properties available</h5>
                   <a
@@ -201,7 +206,8 @@ function Team({ ...props }) {
                   >
                     show
                   </a>
-                </div>
+                </div> */}
+
               </div>
             );
           })}

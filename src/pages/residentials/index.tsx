@@ -2,14 +2,6 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Header } from "@layouts/Header";
 import { Footer } from "@layouts/Footer";
-import Insight from "@components/blog/insight";
-import { useWindowSize } from "@hooks/useWindowSizeNew";
-import LeftArrow from "@components/Slider/LeftArrowNew";
-import RightArrow from "@components/Slider/RightArrowNew";
-import AOS from "aos";
-import Slider from "react-slick";
-import ReviewSlider from "@components/reviewSlider";
-import { Listing } from "@components/Listing/Index";
 import { GetServerSidePropsContext } from "next";
 import { axiosClient, axiosHandler } from "@utils/axios";
 import { ListingData } from "@components/ListingData/Index";
@@ -34,8 +26,8 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     originatingSystemName: "myListings",
     skip: 0,
     filter: {
-      minPrice: ctx?.query?.minPrice ? ctx?.query?.minPrice : '',
-      maxPrice: ctx?.query?.maxPrice ? ctx?.query?.maxPrice : '',
+      minPrice: ctx?.query?.minPrice ? ctx?.query?.minPrice : "",
+      maxPrice: ctx?.query?.maxPrice ? ctx?.query?.maxPrice : "",
 
       uri: "listings",
       propertySubType: ["Residential"],
@@ -113,7 +105,6 @@ export default function Home({ ...props }) {
 
   console.log("event", selectedCity);
 
-
   return (
     <>
       <Header></Header>
@@ -161,7 +152,8 @@ export default function Home({ ...props }) {
                     className="form-control"
                     name="city"
                     value={selectedCity}
-                    onChange={handleCity}>
+                    onChange={handleCity}
+                  >
                     <option value="">Select City</option>
                     <option value="San Jose">San Jose</option>
                     <option value="Burlingame">Burlingame</option>
