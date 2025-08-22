@@ -6,6 +6,8 @@ import { GetServerSidePropsContext } from "next";
 import { axiosClient, axiosHandler } from "@utils/axios";
 import { ListingData } from "@components/ListingData/Index";
 import Bookappointment from "@components/bookappointment";
+import { MainNav } from "@layouts/Header/Nav";
+import Insight from "@components/blog/insight";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   console.log("ctx", ctx?.query?.city);
@@ -87,7 +89,7 @@ export default function Home({ ...props }) {
 
   const [selectedProperty, setSelectedProperty] = useState("commercials");
   const [selectedCountry, setSelectedCountry] = useState("united states");
-  
+
   const [selectedCity, setSelectedCity] = useState(query?.city);
 
 
@@ -103,7 +105,22 @@ export default function Home({ ...props }) {
 
   return (
     <>
-      <Header></Header>
+      {/* <Header></Header> */}
+
+
+      <header className="commercial-bg ddd">
+
+        <MainNav></MainNav>
+        <div className="main-heading">
+          COMMERCIAL
+        </div>
+        <div className="view">
+          <div className="container">
+            <span className="first">VIEW OUR LISTINGS</span>
+            <span className="second">LIST WITH US</span>
+          </div>
+        </div>
+      </header>
 
       <div className="select-list home-select-list" id="searchmain">
         <div className="min-container">
@@ -148,7 +165,7 @@ export default function Home({ ...props }) {
                     value={selectedCity}
                     onChange={handleCity}
                   >
-                    <option  value="">Select City</option>
+                    <option value="">Select City</option>
                     <option value="San Jose">San Jose</option>
                     <option value="Burlingame">Burlingame</option>
                     <option value="Palo Alto">Palo Alto</option>
@@ -185,7 +202,7 @@ export default function Home({ ...props }) {
         </div>
       </div>
 
-      <div className="min-container home-list featured-homelist">
+      <div className="min-container home-list featured-homelist homefeaturedlist">
         {/* <h5 className="main-ti">Oxbridge Listings</h5>
         <h6 className="main-pa">COMMERCIAL</h6>
 
@@ -200,16 +217,113 @@ export default function Home({ ...props }) {
           </select>
         </div> */}
 
-        <div id="member_table2">
+        <div id="member_table2 ">
           <div className="rooms">
             <ListingData data={listing} page="commercials" />
           </div>
         </div>
 
-       
-      </div>
 
+      </div>
+<section className="custom-crausal comm-5">
+        <div className="min-container">
+          <h3>SERVICES</h3>
+
+          <div className="row">
+            <div className="col-xl-4 serviceDesc">
+              <Link href="/commercials">
+              <div className="card" >
+                <img src="images/commercial-min.jpg" className="img-fluid" alt="..." />
+                <div className="card-body">
+
+                  <div className="text-info">
+                    <h4>Commercial</h4>
+                    <p>Join Oxbridge's Advisory Team that specializes in Commercial Real Estate.</p>
+                  </div>
+
+                </div>
+              </div>
+              </Link>
+            </div>
+                <div className="col-xl-4 serviceDesc">
+                          <Link href="/lands">
+              <div className="card" >
+                <img src="images/Land and Projects.jpg" className="img-fluid" alt="..." />
+                <div className="card-body">
+
+                  <div className="text-info">
+                    <h4>Land and Development</h4>
+                    <p>Join Oxbridge's Land and Development Team if that is your passion.</p>
+                  </div>
+
+                </div>
+              </div>
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
       <Bookappointment></Bookappointment>
+
+      
+      <section className="blog-news slidertypesecond  homeblog bluebg  blogbg mb-5">
+        <div className="min-container">
+          <h3>news &amp; blogs</h3>
+          <div className="pageinnercontent ">
+            {" "}
+            <Insight />
+          </div>
+        </div>
+      </section>
+
+      <section className="custom-crausal join">
+        <div className="min-container">
+
+          <h5 className="inner-txt">Get an Oxbridge Edge:</h5>
+          <ul className="inner-list">
+            <li>
+              Over 40 years of experience in Commercial Real Estate
+            </li>
+            <li>
+              Build expertise in assets including hospitality, office, retail, multifamily, industrial
+            </li>
+            <li>
+              Caters to best in className commercial, luxury residential, and land and development projects
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section className="follow-us">
+        <div className="min-container">
+          <h5>For more real estate news and updates,</h5>
+          <h5>follow us on</h5>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/company/76742267/admin/" target="_blank">
+                <img src="/images/linked.png" />
+              </a>
+            </li>
+
+            <li>
+              <a href="https://www.instagram.com/oxbridgeintco/" target="_blank">
+                <img src="/images/insta.png" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/Oxbridge-International-Co-110421454470740" target="_blank">
+                <img src="/images/facebook.png" />
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/OxbridgeIntCo" target="_blank">
+                <img src="/images/twitt.png" />
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </section>
 
       <Footer></Footer>
     </>

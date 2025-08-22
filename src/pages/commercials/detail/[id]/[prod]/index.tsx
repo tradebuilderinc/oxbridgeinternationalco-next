@@ -71,9 +71,156 @@ export default function Home({ ...props }) {
 
   console.log("listinglisting", listing);
 
+  var settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 8000,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    nextArrow: (
+      <RightArrow
+        to="next"
+        className=""
+        onClick={() => console.log("right arrow")}
+        customClass="home3 home-arrow-slider-right"
+      />
+    ),
+    prevArrow: (
+      <LeftArrow
+        to="prev"
+        className=""
+        onClick={() => console.log("left arrow")}
+        customClass="home3  home-arrow-slider-left"
+      />
+    ),
+
+    responsive: [
+      {
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 2,
+          infinite: true,
+          dots: false,
+          arrow: true,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          dots: false,
+          arrow: true,
+        },
+      },
+      {
+        breakpoint: 300,
+        settings: {
+          slidesToShow: 1,
+          dots: false,
+          arrow: true,
+
+        },
+      },
+    ],
+  };
+
+
+
+  var settingLists = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 8000,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    mobileFirst: true,
+    nextArrow: (
+      <RightArrow
+        to="next"
+        className=""
+        onClick={() => console.log("right arrow")}
+        customClass="home3 home-arrow-slider-right"
+      />
+    ),
+    prevArrow: (
+      <LeftArrow
+        to="prev"
+        className=""
+        onClick={() => console.log("left arrow")}
+        customClass="home3  home-arrow-slider-left"
+      />
+    ),
+
+    responsive: [
+      {
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 2,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 300,
+        settings: {
+          slidesToShow: 1,
+          dots: true,
+        },
+      },
+    ],
+  };
+
+
   return (
     <>
       <HeaderInner></HeaderInner>
+
+      <section className="lis-detail-box">
+        <div className="min-container">
+          <div className="pageinnercontent slidertypefirst commercialimglist">
+            <Slider {...settingLists}>
+              <div className="item">
+                <div className="inner">
+                  <img src="/images/3080N1stStreetPic.jpg" className="img-fluid" alt="..." />
+                  <div className="img-txt">
+                  <h6> Don Adams</h6>
+                  </div>
+                </div>
+              </div>
+               <div className="item">
+                <div className="inner">
+                  <img src="/images/3080N1stStreetPic.jpg" className="img-fluid" alt="..." />
+                          <div className="img-txt">
+                  <h6> Don Adams</h6>
+                  </div>
+                </div>
+              </div>
+               <div className="item">
+                <div className="inner">
+                  <img src="/images/3080N1stStreetPic.jpg" className="img-fluid" alt="..." />
+                   <div className="img-txt">
+                  <h6> Don Adams</h6>
+                  </div>
+                </div>
+              </div>
+
+
+            </Slider>
+
+          </div>
+        </div>
+
+      </section>
 
       <section className="lis-detail-box">
         <div className="min-container">
@@ -136,7 +283,7 @@ export default function Home({ ...props }) {
             <div className="talk-agent">
               <h4>talk to our agent</h4>
 
-{/* <AgentInfo></AgentInfo> */}
+              {/* <AgentInfo></AgentInfo> */}
 
 
 
@@ -171,6 +318,83 @@ export default function Home({ ...props }) {
           </div>
         </div>
       </section>
+
+
+      <section className="blog-news slidertypesecond  homeblog bluebg  blogbg">
+        <div className="min-container">
+          <h3>SIMILAR Properties</h3>
+          <div className="pageinnercontent ">
+            <div className="hblogsec">
+              <Slider {...settings}>
+
+                <div className="blogsec">
+
+                  <Link href="#">
+                    <div className="mainblog">
+                      <div className="serviceDesc">
+                        <div className="card" >
+                          <img src="/images/LandandProjects.jpg" className="img-fluid" alt="..." />
+                          <div className="card-body">
+
+                            <div className="text-info">
+                              <h4>Pescadero, CA 94060</h4>
+                              <p>$4,200,000</p>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+
+                <div className="blogsec">
+
+                  <Link href="#">
+                    <div className="mainblog">
+                      <div className="serviceDesc">
+                        <div className="card" >
+                          <img src="/images/LandandProjects.jpg" className="img-fluid" alt="..." />
+                          <div className="card-body">
+
+                            <div className="text-info">
+                              <h4>Pescadero, CA 94060</h4>
+                              <p>$4,200,000</p>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+                <div className="blogsec">
+
+                  <Link href="#">
+                    <div className="mainblog">
+                      <div className="serviceDesc">
+                        <div className="card" >
+                          <img src="/images/LandandProjects.jpg" className="img-fluid" alt="..." />
+                          <div className="card-body">
+
+                            <div className="text-info">
+                              <h4>Pescadero, CA 94060</h4>
+                              <p>$4,200,000</p>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+
+              </Slider>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer></Footer>
     </>
   );

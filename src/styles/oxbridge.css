@@ -744,10 +744,7 @@ input.light-add::placeholder{
 	    background-color: #74613B;
     padding: 25px 35px;
     color: #fff;
-    position: absolute;
-    bottom: 76px;
-    left: 0;
-    right: 0;
+   
 }
 .lis-detail-box .img-txt .first{
 	    font-size: 26px;
@@ -1274,6 +1271,34 @@ filter: brightness(0) invert(1);
  
 .review .slick-dots{
     display: none !important;
+}
+
+
+.serviceDesc .card-body {
+    padding: 20px 35px;
+    height: 100%;
+    background: #F2F2F2;
+}
+
+.serviceDesc .card {
+    height: 100%;
+}
+
+.serviceDesc .text-info h4 {
+    color: #212529;
+    font-family: 'futura_md_btmedium';
+    font-size: 20px;
+    font-weight: 200;
+}
+.serviceDesc .text-info p{
+    color: #000;
+}
+.commercialimglist img {
+    width: 100%;
+    object-fit: cover;
+}
+.commercialimglist ul.slick-dots {
+    bottom: -35px;
 }
 
 @media (max-width: 1050px) { 
