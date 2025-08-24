@@ -2,8 +2,47 @@ import { useEffect, useState } from "react";
 import SplitDescription from "../helper/splitDescription";
 import Link from "next/link";
 import { apiBaseURL } from "@config/api";
+import AdditionalInfo from "@components/MeetTeam/additionalInfo";
 
 function Team({ ...props }) {
+
+
+
+
+  const [additionInfo, setAdditionInfo]: any = useState([]);
+//   console.log("props", props);
+
+  const Info = async () => {
+    const response = await fetch(
+      `https://prod.imkloud.com/api/v1/user-groups/?apiKey=4MrokA3pBgjfsguf2M9aymTQDREqnE`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+    const faqdata = await response.json();
+    setAdditionInfo(faqdata?.data[0]?.userData);
+
+  };
+
+
+
+
+  useEffect(() => {
+  
+      Info();
+    
+  }, []);
+
+
+
+
+
+
+
+
+
+
   const [doctors, setDoctors]: any = useState([]);
   const [featDoctor, setFeatDoctor]: any = useState([]);
   // let credentials = {
@@ -159,6 +198,17 @@ function Team({ ...props }) {
                     </div>
                   </div>
                 </div>
+
+
+
+
+<div className={`addition ${item?._id}`}> 
+
+<AdditionalInfo dataId={item?._id} mainData={additionInfo}/>
+
+
+</div>
+
 
                 {/* <div className="team-list">
                   <h5>SPECIALITIES</h5>

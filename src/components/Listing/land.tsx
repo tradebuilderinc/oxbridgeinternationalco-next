@@ -35,7 +35,7 @@ function LandProperties({ ...props }) {
 
     const data = await response.json();
 
-    console.log('data?.data', data);
+    // console.log('data?.data', data);
     setList(data?.data);
   };
 

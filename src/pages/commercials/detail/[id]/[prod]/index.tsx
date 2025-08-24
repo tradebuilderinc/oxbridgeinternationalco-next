@@ -15,18 +15,41 @@ import { axiosClient, axiosHandler } from "@utils/axios";
 import { ListingData } from "@components/ListingData/Index";
 import Bookappointment from "@components/bookappointment";
 import { HeaderInner } from "@layouts/HeaderInner";
+import FormatPrice from "@components/helper/FormatPrice";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
-  let credentials = {
+  let credentials2 = {
     userId: process.env.userId,
     orgId: process.env.orgId,
     _id: ctx?.query?.id,
     listingId: ctx?.query?.prod,
   };
 
-  const listing: any = await axiosHandler(
+  let credentials = {
+    userId: process.env.userId,
+    orgId: process.env.orgId,
+    type: "photo",
+    limit: 100,
+    originatingSystemName: "myListings",
+    skip: 0,
+    filter: {
+      uri: "listings",
+       mlsStatus: "",
+      propertySubType: [
+        "Industrial",
+        "Office",
+        "Hotel & Motel",
+        "Land",
+        "Agricultural",
+        "Multi-Family",
+      ],
+      country: "united states",
+    },
+  };
+
+  const Alllisting: any = await axiosHandler(
     axiosClient().post(
-      `${process.env.API_HOST_ADMIN}/getSingleMyListing/properties`,
+      `${process.env.API_HOST_ADMIN}/getAllMyListings/properties`,
       credentials,
       {
         headers: {
@@ -37,11 +60,29 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     )
   );
 
+  const listing: any = await axiosHandler(
+    axiosClient().post(
+      `${process.env.API_HOST_ADMIN}/getSingleMyListing/properties`,
+      credentials2,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          body: JSON.stringify(credentials2),
+        },
+      }
+    )
+  );
+
+
+
+  console.log('listing?.data', listing);
+
   let data;
   if (listing?.success) {
     data = {
       listing: listing?.data?.data[0],
       query: ctx?.query,
+      Alllisting: Alllisting?.data,
     };
   } else {
     data = {};
@@ -53,7 +94,9 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 }
 
 export default function Home({ ...props }) {
-  const { listing, query } = props;
+  const { listing, query, Alllisting } = props;
+
+
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
@@ -69,7 +112,7 @@ export default function Home({ ...props }) {
     };
   }, ["/js/talktoouragent.js"]);
 
-  console.log("listinglisting", listing);
+  console.log("Alllisting", Alllisting);
 
   var settings = {
     dots: true,
@@ -121,13 +164,10 @@ export default function Home({ ...props }) {
           slidesToShow: 1,
           dots: false,
           arrow: true,
-
         },
       },
     ],
   };
-
-
 
   var settingLists = {
     dots: true,
@@ -180,46 +220,14 @@ export default function Home({ ...props }) {
     ],
   };
 
-
   return (
     <>
       <HeaderInner></HeaderInner>
 
       <section className="lis-detail-box">
         <div className="min-container">
-          <div className="pageinnercontent slidertypefirst commercialimglist">
-            <Slider {...settingLists}>
-              <div className="item">
-                <div className="inner">
-                  <img src="/images/3080N1stStreetPic.jpg" className="img-fluid" alt="..." />
-                  <div className="img-txt">
-                  <h6> Don Adams</h6>
-                  </div>
-                </div>
-              </div>
-               <div className="item">
-                <div className="inner">
-                  <img src="/images/3080N1stStreetPic.jpg" className="img-fluid" alt="..." />
-                          <div className="img-txt">
-                  <h6> Don Adams</h6>
-                  </div>
-                </div>
-              </div>
-               <div className="item">
-                <div className="inner">
-                  <img src="/images/3080N1stStreetPic.jpg" className="img-fluid" alt="..." />
-                   <div className="img-txt">
-                  <h6> Don Adams</h6>
-                  </div>
-                </div>
-              </div>
-
-
-            </Slider>
-
-          </div>
+          <div className="pageinnercontent slidertypefirst commercialimglist"></div>
         </div>
-
       </section>
 
       <section className="lis-detail-box">
@@ -230,15 +238,37 @@ export default function Home({ ...props }) {
           <div className="owl-carousel owl-theme detail-box">
             <div className="item">
               <div className="inner">
-                <img
-                  src={
-                    listing?.photoUrls
-                      ? listing?.photoUrls[0]
-                      : "https://oxbridgeinternationalco.com/assets//images/noAvatar.png"
-                  }
-                  alt={listing?.streetName}
-                  className="img-fluid"
-                />
+                {listing?.photoUrls?.length >= 2 ? (
+                  <>
+                    <Slider {...settingLists}>
+                      {listing?.photoUrls &&
+                        listing?.photoUrls?.map((item: any, index: any) => {
+                          return (
+                            <div key={index}>
+                              <img
+                                src={item}
+                                alt={listing?.streetName}
+                                className="img-fluid"
+                              />
+                            </div>
+                          );
+                        })}
+                    </Slider>
+                  </>
+                ) : (
+                  <>
+                    {" "}
+                    <img
+                      src={
+                        listing?.photoUrls
+                          ? listing?.photoUrls[0]
+                          : "https://oxbridgeinternationalco.com/assets//images/noAvatar.png"
+                      }
+                      alt={listing?.streetName}
+                      className="img-fluid"
+                    />
+                  </>
+                )}
 
                 <div className="img-txt">
                   <div className="d-flex justify-content-between bd-highlight mb-3">
@@ -285,8 +315,6 @@ export default function Home({ ...props }) {
 
               {/* <AgentInfo></AgentInfo> */}
 
-
-
               <img
                 id="agentimg"
                 src="https://oxbridgeinternationalco.com/assets/images/noAvatar.png"
@@ -319,77 +347,76 @@ export default function Home({ ...props }) {
         </div>
       </section>
 
-
       <section className="blog-news slidertypesecond  homeblog bluebg  blogbg">
         <div className="min-container">
           <h3>SIMILAR Properties</h3>
           <div className="pageinnercontent ">
             <div className="hblogsec">
-              <Slider {...settings}>
+              {Alllisting?.total >= 2 ? (
+               <Slider {...settings}>
+                {Alllisting?.data &&
+                    Alllisting?.data?.map((item: any, index: any) => {
+                      return (
 
-                <div className="blogsec">
 
-                  <Link href="#">
-                    <div className="mainblog">
-                      <div className="serviceDesc">
-                        <div className="card" >
-                          <img src="/images/LandandProjects.jpg" className="img-fluid" alt="..." />
-                          <div className="card-body">
 
-                            <div className="text-info">
-                              <h4>Pescadero, CA 94060</h4>
-                              <p>$4,200,000</p>
+
+                        
+                        <div className="blogsec" key={index}>
+                            <Link
+                                href={`${props?.page}/detail/${item?._id}/${item?.listingId}`}
+                              >
+                            <div className="mainblog">
+                              <div className="serviceDesc">
+                                <div className="card">
+                                       <img
+                                  src={
+                                    item?.photo
+                                      ? item?.photo
+                                      : "https://oxbridgeinternationalco.com/assets//images/noAvatar.png"
+                                  }
+                                  alt={item?.city}
+                                  className="img-responsive imageLoader"
+                                />
+                                  <div className="card-body">
+                                    <div className="text-info">
+                                      {item?.propertySubType}
+                                      <h4>Pescadero, CA 94060</h4>
+                                      <p>{item?.listPrice == "0" ||
+                                  item?.listPrice == "1" ||
+                                  item?.listPrice == "00" ||
+                                  item?.listPrice == 0 ? (
+                                    <Link href="tel:+14084045754">
+                                      Call for Price
+                                    </Link>
+                                  ) : (
+                                    <FormatPrice price={item?.listPrice} />
+                                  )}</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-
-                          </div>
+                          </Link>
                         </div>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
+                      );
+                    })}
+                </Slider> 
+              ) : (
+                <></>
+              )}
 
-                <div className="blogsec">
 
-                  <Link href="#">
-                    <div className="mainblog">
-                      <div className="serviceDesc">
-                        <div className="card" >
-                          <img src="/images/LandandProjects.jpg" className="img-fluid" alt="..." />
-                          <div className="card-body">
 
-                            <div className="text-info">
-                              <h4>Pescadero, CA 94060</h4>
-                              <p>$4,200,000</p>
-                            </div>
 
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-                <div className="blogsec">
 
-                  <Link href="#">
-                    <div className="mainblog">
-                      <div className="serviceDesc">
-                        <div className="card" >
-                          <img src="/images/LandandProjects.jpg" className="img-fluid" alt="..." />
-                          <div className="card-body">
 
-                            <div className="text-info">
-                              <h4>Pescadero, CA 94060</h4>
-                              <p>$4,200,000</p>
-                            </div>
+ 
 
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                </div>
 
-              </Slider>
+
+
+
             </div>
           </div>
         </div>

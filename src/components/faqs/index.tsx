@@ -8,7 +8,7 @@ function Faqs({ ...props }) {
   const [limit, setLimit]: any = useState(4);
   const [faData, setFaData]: any = useState([]);
 
-
+  
   const faq = async () => {
     const response = await fetch(
       `${process.env.API_HOST_ADMIN}/api/faqs?populate=*`,
@@ -17,20 +17,10 @@ function Faqs({ ...props }) {
         headers: { "Content-Type": "application/json" },
       }
     );
-
-    
-
     const faqdata = await response.json();
-
-
-   
-
     setFaData(faqdata?.data[0]?.attributes?.FAQ);
-
-
-
-
   };
+
 
   useEffect(() => {
     faq();
@@ -43,11 +33,6 @@ function Faqs({ ...props }) {
       setLimit(40);
     }
   }, []);
-
-
-
-
-
 
   return (
     <>
@@ -107,5 +92,3 @@ function Faqs({ ...props }) {
   );
 }
 export default Faqs;
-
-
