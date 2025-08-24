@@ -65,7 +65,7 @@ function Listing({ ...props }) {
 
   return (
     <>
-      <div className="min-container home-list featured-homelist">
+      <div className="min-container home-list featured-homelist homefeaturedlist">
         <h5 className="main-ti">Oxbridge Listings</h5>
         <h6 className="main-pa">COMMERCIAL</h6>
 

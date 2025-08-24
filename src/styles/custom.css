@@ -238,7 +238,7 @@ div#searchList {
 .featured-homelist .inner .img-info ul li {
     display: inline-block;
     font-size: 18px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
 }
 .alert.alert-success:empty {
  display: none;
@@ -452,7 +452,8 @@ div#searchList {
 .rooms {
  display: flex;
  flex-wrap: wrap;
- justify-content: space-between;
+    justify-content: left;
+    gap: 0 18px;
 }
 
 .full {
@@ -461,7 +462,7 @@ div#searchList {
 
 .home-list .full .inner img {
  max-width: 100%;
- height: 400px;
+ height: 290px;
  object-fit: cover;
  width: 100%;
 }
@@ -469,7 +470,9 @@ div#searchList {
 .home-list .full {
  margin-bottom: 30px;
 }
-
+.homefeaturedlist .full {
+    width: 31%;
+}
 .home-list .full li:empty {
  display: none;
  margin-bottom: 5px;
@@ -528,6 +531,9 @@ div#searchList {
 }
 
 @media only screen and (max-width: 700px) {
+    .homefeaturedlist .full {
+    width: 100% !important;
+}
     div#member_table2 {
     margin-top: 62px;
 }
