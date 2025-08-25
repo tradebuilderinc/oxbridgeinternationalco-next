@@ -20,6 +20,23 @@ const nextConfig = {
     // callNumberFormat: "(909) 334-4015",
     // callNumber: "9093344015",
     // imagePath: "/images/smileselectdental/",
+
+
+
+  siteTitle: "Oxbridge International",
+    siteDescription:
+      "Oxbridge International Co. is the latest and remarkable part of this development. With over 40 years of experience in our brokerage arena, we have developed International Network Syndications expanding in China, United Kingdom, and Dubai.",
+    siteName: "Oxbridge International",
+    siteLink: "https://oxbridgeinternationalco.com/",
+    siteImage: "/images/oxbridgeinternationalco.jpg",
+    callNumberFormat: "(408) 404-5754",
+    callNumber: "4084045754",
+    imagePath: "/images/",
+
+
+
+
+
   },
 };
 

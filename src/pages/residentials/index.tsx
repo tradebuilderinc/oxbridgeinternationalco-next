@@ -6,6 +6,7 @@ import { GetServerSidePropsContext } from "next";
 import { axiosClient, axiosHandler } from "@utils/axios";
 import { ListingData } from "@components/ListingData/Index";
 import Bookappointment from "@components/bookappointment";
+import PageMeta from "@components/PageMeta";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   console.log("ctx", ctx?.query?.city);
@@ -107,6 +108,7 @@ export default function Home({ ...props }) {
 
   return (
     <>
+      <PageMeta />
       <Header></Header>
 
       <div className="select-list home-select-list" id="searchmain">

@@ -12,6 +12,7 @@ import { MdEmail } from "react-icons/md";
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import { HeaderInner } from "@layouts/HeaderInner";
+import PageMeta from "@components/PageMeta";
 
 
 
@@ -42,7 +43,7 @@ export default function Faqs({ ...props }) {
   return (
     <Fragment>
 
-
+ <PageMeta />
       <HeaderInner></HeaderInner>
 
       <section className="join contact">

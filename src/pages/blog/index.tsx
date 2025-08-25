@@ -19,7 +19,7 @@ import FilterUrl from "@components/helper/FilterUrl";
 import Mainmeta from "@components/meta";
 import PageMeta from "@components/PageMeta";
 import AOS from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 import { GoArrowUpRight } from "react-icons/go";
 import { HeaderInner } from "@layouts/HeaderInner";
 
@@ -43,11 +43,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
       `${apiBaseURL}/v1/posts/archives/${process.env.userId}/${process.env.orgId}?limit=4&skip=0`
     )
   );
-  const seoData = await axiosHandler(
-    axiosClient().get(
-      `${process.env.API_HOST_ADMIN}/api/blog/?populate=*&populate=seo,seo.metaImage,seo.metaSocial,seo.metaSocial.image`
-    )
-  );
+
   let data;
 
   if (blogData?.success) {
@@ -55,7 +51,6 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
       blog: blogData?.data?.data?.posts,
       recentPost: recentPost?.data?.data?.posts,
       archivesPost: recentPost?.data?.data?.posts,
-      seo: seoData?.data?.data,
       page: ctx.query,
       length: blogData?.data?.data?.posts[0]?.postsCount,
     };
@@ -68,7 +63,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 export default function Index({ ...props }) {
   useEffect(() => {
     AOS.init();
-  }, [])
+  }, []);
 
   let pageNumber: any;
   if (props.page.page == "NaN" || pageNumber == "NaN") {
@@ -104,72 +99,73 @@ export default function Index({ ...props }) {
         <PageMeta />
       )} */}
 
-        <HeaderInner></HeaderInner>
+      <HeaderInner></HeaderInner>
 
       <section className="pagesec">
         <Container>
           <div className="row">
-          <div className="pagehead innerhead text-center pb-3" >
-                        <div className="row">
-                            <h1>Insights</h1>
-                        </div>
-
-
-                    </div>
+            <div className="pagehead innerhead text-center pb-3">
+              <div className="row">
+                <h1>Insights</h1>
+              </div>
+            </div>
             <div className="col-md-8">
-              
-
               <div className="heroblog border-radius">
                 {props?.blog.slice(0, 1).map((blog: any, index: any) => {
                   return (
                     <Card key={index}>
                       <div className="blogimg">
                         <div className="imgborder">
-                         
-                            {!blog?.featuredImageThumb ? (
-                              <>
-                                {" "}
-                                <Card.Img
-                                  variant="top"
-                                  src={"/images/noimg.png"}
-                                  alt={blog?.title}
-                                />
-                              </>
-                            ) : (
-                              <>
-                                {" "}
-                                <Card.Img
-                                  variant="top"
-                                  src={blog?.featuredImageThumb}
-                                  alt={blog?.title}
-                                />
-                              </>
-                            )}
-                         
+                          {!blog?.featuredImageThumb ? (
+                            <>
+                              {" "}
+                              <Card.Img
+                                variant="top"
+                                src={"/images/noimg.png"}
+                                alt={blog?.title}
+                              />
+                            </>
+                          ) : (
+                            <>
+                              {" "}
+                              <Card.Img
+                                variant="top"
+                                src={blog?.featuredImageThumb}
+                                alt={blog?.title}
+                              />
+                            </>
+                          )}
 
                           <div className="blogcont">
                             <div className="blogdate">
                               <ReadableDate datedata={blog?.createdAt} />
                             </div>
-                            <h2 className="subheading">
-                              
-                                {blog?.title}
-                     
-                            </h2>
+                            <h2 className="subheading">{blog?.title}</h2>
+                               <div className="hblogcont">
+                                        <p>
+                                          <SplitDescription
+                                            des={blog?.body}
+                                            limit={30}
+                                          />
+                                        </p>
+                                      </div> 
                             <div className="learnMoreblog">
-                            <Link
+                              <Link
                                 href={
                                   blog?.seoMeta?.tags?.url &&
-                                    blog?.seoMeta?.tags?.url !== ""
+                                  blog?.seoMeta?.tags?.url !== ""
                                     ? `/blog/${blog?.seoMeta?.tags?.url}?p=${blog._id}`
-                                    : `/blog/${FilterUrl(blog?.slug)}?p=${blog._id
-                                    }`
+                                    : `/blog/${FilterUrl(blog?.slug)}?p=${
+                                        blog._id
+                                      }`
                                 }
                               >
-                                      Continue Reading
-                                      <span><GoArrowUpRight></GoArrowUpRight></span>
-                                </Link>      
-                                    </div>
+                                Continue Reading
+                                <span>
+                                  <GoArrowUpRight></GoArrowUpRight>
+                                </span>
+                              </Link>
+                            </div>
                             {/* <p>
                           <SplitDescription
                             className="blogtxt"
@@ -177,35 +173,36 @@ export default function Index({ ...props }) {
                             limit={60}
                           />{" "}
                         </p> */}
-
                           </div>
                         </div>
                       </div>
-
-
                     </Card>
                   );
                 })}
               </div>
               <div className="hblogsec-blog">
                 <div className="row homeblog">
-
                   {props?.blog.slice(0, 30).map((blog: any, index: any) => {
                     return (
                       <>
                         {index === 0 ||
-                          blog?.category?._id == "j84GdRRnafXyZ6fBo" ? (
+                        blog?.category?._id == "j84GdRRnafXyZ6fBo" ? (
                           <></>
                         ) : (
                           <div className="col-lg-6">
-                            <div className="blogsec" data-aos="zoom-in" key={index}>
+                            <div
+                              className="blogsec"
+                              data-aos="zoom-in"
+                              key={index}
+                            >
                               <Link
                                 href={
                                   blog?.seoMeta?.tags?.url &&
-                                    blog?.seoMeta?.tags?.url !== ""
+                                  blog?.seoMeta?.tags?.url !== ""
                                     ? `/blog/${blog?.seoMeta?.tags?.url}?p=${blog._id}`
-                                    : `/blog/${FilterUrl(blog?.slug)}?p=${blog._id
-                                    }`
+                                    : `/blog/${FilterUrl(blog?.slug)}?p=${
+                                        blog._id
+                                      }`
                                 }
                               >
                                 <div className="mainblog">
@@ -237,19 +234,25 @@ export default function Index({ ...props }) {
                                       />
                                     </div>
                                     <h4>{blog?.title}</h4>
-                                    <div className="learnMoreblog">
-                                      Continue Reading
-                                      <span><GoArrowUpRight></GoArrowUpRight></span>
-                                    </div>
+                                   
 
-                                    {/* <div className="hblogcont">
+                                   <div className="hblogcont">
                                         <p>
                                           <SplitDescription
                                             des={blog?.body}
                                             limit={15}
                                           />
                                         </p>
-                                      </div> */}
+                                      </div> 
+
+
+ <div className="learnMoreblog pt-1">
+                                      Continue Reading
+                                      <span>
+                                        <GoArrowUpRight></GoArrowUpRight>
+                                      </span>
+                                    </div>
+
 
                                   </div>
                                 </div>
@@ -260,10 +263,8 @@ export default function Index({ ...props }) {
                       </>
                     );
                   })}
-
                 </div>
               </div>
-
 
               {/* <div className="col-md-12">
                 <nav

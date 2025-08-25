@@ -171,7 +171,9 @@ section.pagesec.slidertypesecond.clientSys h2 img {
     top: 396px !important;
 }
 .homeblog  .slick-next{
-    top: -50px !important;
+    /* top: -50px !important; */
+    top: 50% !important;
+    margin-top: -10px;
 }
 /* .slidertypesecond .slick-next.home-arrow-slider-right{
     background: url(/images/plg/Forward-Arrow.png) center center/cover no-repeat ;
@@ -419,8 +421,6 @@ h2.footerheading{
         margin-top: 8px;
         color: #333;
         font-size: 14px;
-        bottom: 64px;
-        position: absolute;
     }
     
     .learnMoreblog span{ 
