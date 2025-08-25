@@ -307,9 +307,7 @@ export default function Home({ ...props }) {
             </div>
           </div>
           <div className="col-md-5">
-  <AgentInfo></AgentInfo>  
-
-       
+            <AgentInfo></AgentInfo>
           </div>
         </div>
       </section>
@@ -350,7 +348,7 @@ export default function Home({ ...props }) {
                                         item?.listPrice == "00" ||
                                         item?.listPrice == 0 ? (
                                           <span>
-                                          <br/>  Call for Price
+                                            <br /> Call for Price
                                           </span>
                                         ) : (
                                           <FormatPrice
