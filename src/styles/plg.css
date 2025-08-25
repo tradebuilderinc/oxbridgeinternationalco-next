@@ -562,9 +562,7 @@ a.learnmore span{
 
 }
 
-.hblogsec-blog .learnMoreblog{
-    bottom: 29px;
-}
+
 .recent-box .blogdate{
     color: #2c50d6;
     margin-bottom: 5PX;
@@ -607,9 +605,7 @@ a.learnmore span{
 .partnerSlider .ser-car-desc{
     min-height: 119px; 
 }
-.heroblog .learnMoreblog {
-    position: static;
-}
+
 .successstories img {
     max-height: 500px;
     min-height: 500px;
@@ -733,10 +729,7 @@ p.changing-sentence{
     .privacywrap{
         margin-top: 0;
     }
-    .learnMoreblog {
-        position: absolute;
-        bottom: 75px;
-    }
+
     .ser-car-desc span {
         font-weight: 700;
     }

@@ -36,14 +36,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     filter: {
       uri: "listings",
       mlsStatus: "",
-      propertySubType: [
-        "Industrial",
-        "Office",
-        "Hotel & Motel",
-        "Land",
-        "Agricultural",
-        "Multi-Family",
-      ],
+      propertySubType: ["Residential"],
       country: "united states",
     },
   };
@@ -112,7 +105,7 @@ export default function Home({ ...props }) {
   console.log("Alllisting", Alllisting);
 
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 8000,
@@ -120,6 +113,7 @@ export default function Home({ ...props }) {
     slidesToShow: 3,
     slidesToScroll: 1,
     mobileFirst: true,
+      arrow: true,
     nextArrow: (
       <RightArrow
         to="next"
@@ -167,7 +161,8 @@ export default function Home({ ...props }) {
   };
 
   var settingLists = {
-    dots: true,
+    dots: false,
+     arrow: true,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 8000,
@@ -175,7 +170,7 @@ export default function Home({ ...props }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     mobileFirst: true,
-    nextArrow: (
+        nextArrow: (
       <RightArrow
         to="next"
         className=""
@@ -196,7 +191,7 @@ export default function Home({ ...props }) {
       {
         breakpoint: 1199,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           infinite: true,
         },
       },
@@ -221,13 +216,9 @@ export default function Home({ ...props }) {
     <>
       <HeaderInner></HeaderInner>
 
-      <section className="lis-detail-box">
-        <div className="min-container">
-          <div className="pageinnercontent slidertypefirst commercialimglist"></div>
-        </div>
-      </section>
+  
 
-      <section className="lis-detail-box">
+      <section className="lis-detail-box  slidertypefirst  homeblog bluebg  blogbg ">
         <div className="min-container">
           <h3>
             {listing?.streetName}, {listing?.city}
@@ -259,7 +250,7 @@ export default function Home({ ...props }) {
                       src={
                         listing?.photoUrls
                           ? listing?.photoUrls[0]
-                          : "https://oxbridgeinternationalco.com/assets//images/noAvatar.png"
+                          : "/images/noAvatar.png"
                       }
                       alt={listing?.streetName}
                       className="img-fluid"
@@ -307,7 +298,9 @@ export default function Home({ ...props }) {
             </div>
           </div>
           <div className="col-md-5">
-            <AgentInfo></AgentInfo>
+  <AgentInfo></AgentInfo>  
+
+       
           </div>
         </div>
       </section>
@@ -333,7 +326,7 @@ export default function Home({ ...props }) {
                                     src={
                                       item?.photo
                                         ? item?.photo
-                                        : "https://oxbridgeinternationalco.com/assets//images/noAvatar.png"
+                                       : "/images/noAvatar.png"
                                     }
                                     alt={item?.city}
                                     className="img-responsive imageLoader"
@@ -348,7 +341,7 @@ export default function Home({ ...props }) {
                                         item?.listPrice == "00" ||
                                         item?.listPrice == 0 ? (
                                           <span>
-                                            <br /> Call for Price
+                                          <br/>  Call for Price
                                           </span>
                                         ) : (
                                           <FormatPrice

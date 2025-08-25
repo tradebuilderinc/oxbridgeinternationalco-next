@@ -1,23 +1,20 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { Header } from "@layouts/Header";
 import { Footer } from "@layouts/Footer";
-import Insight from "@components/blog/insight";
+
 import { useWindowSize } from "@hooks/useWindowSizeNew";
 import LeftArrow from "@components/Slider/LeftArrowNew";
 import RightArrow from "@components/Slider/RightArrowNew";
-import AOS from "aos";
+
 import Slider from "react-slick";
 import ReviewSlider from "@components/reviewSlider";
 import { Listing } from "@components/Listing/Index";
 import { HeaderInner } from "@layouts/HeaderInner";
-
+import PageMeta from "@components/PageMeta";
 
 export default function Home({ ...props }) {
   const { widthType } = useWindowSize();
-  useEffect(() => {
-    AOS.init();
-  }, []);
+
 
   var settings = {
     dots: true,
@@ -70,8 +67,6 @@ export default function Home({ ...props }) {
     ],
   };
 
-
-
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
   useEffect(() => {
@@ -88,6 +83,7 @@ export default function Home({ ...props }) {
 
   return (
     <>
+      <PageMeta />
       <HeaderInner></HeaderInner>
 
       <section className="about">
@@ -98,20 +94,33 @@ export default function Home({ ...props }) {
             <h6>international co.</h6>
           </div>
 
-
-          <p className="second">The landscape of the Commercial Real Estate market is vastly changing. Oxbridge International Co. is the latest and remarkable part of this development. With over 40 years of experience in our brokerage arena, we have developed International Network Syndications expanding in China, United Kingdom, and Dubai. Our team consists of expert negotiators who specialize in asset classNamees like hospitality, office, retail, multifamily, industrial and land and development. We utilize the latest technology and data to analyze and predict market trends to optimize returns for our clients.
-
-
+          <p className="second">
+            The landscape of the Commercial Real Estate market is vastly
+            changing. Oxbridge International Co. is the latest and remarkable
+            part of this development. With over 40 years of experience in our
+            brokerage arena, we have developed International Network
+            Syndications expanding in China, United Kingdom, and Dubai. Our team
+            consists of expert negotiators who specialize in asset classNamees
+            like hospitality, office, retail, multifamily, industrial and land
+            and development. We utilize the latest technology and data to
+            analyze and predict market trends to optimize returns for our
+            clients.
           </p>
-          <p className="second">Oxbridge International Co. engages their international and domestic affiliates to help secure ties and alliances in all global markets. We also have established domestic affiliations including  Austin, Chicago, Seattle, and Miami. Over the years our team members have been a vital source for acquisitions and portfolio management for our international and domestic clients.  </p>
+          <p className="second">
+            Oxbridge International Co. engages their international and domestic
+            affiliates to help secure ties and alliances in all global markets.
+            We also have established domestic affiliations including Austin,
+            Chicago, Seattle, and Miami. Over the years our team members have
+            been a vital source for acquisitions and portfolio management for
+            our international and domestic clients.{" "}
+          </p>
 
-          <p className="second">Commercial Real Estate is going to reach newer heights in the coming years. If you desire to maximize or expand your real estate portfolio, allow Oxbridge International to become an integral part of your team.   </p>
-
-
-
-
-
-
+          <p className="second">
+            Commercial Real Estate is going to reach newer heights in the coming
+            years. If you desire to maximize or expand your real estate
+            portfolio, allow Oxbridge International to become an integral part
+            of your team.{" "}
+          </p>
         </div>
       </section>
 

@@ -4,42 +4,29 @@ import { Header } from "@layouts/Header";
 import { Footer } from "@layouts/Footer";
 import Insight from "@components/blog/insight";
 import { useWindowSize } from "@hooks/useWindowSizeNew";
-
-import AOS from "aos";
-
 import ReviewSlider from "@components/reviewSlider";
 import { Listing } from "@components/Listing/Index";
 import Bookappointment from "@components/bookappointment";
 import { LandProperties } from "@components/Listing/land";
+import PageMeta from "@components/PageMeta";
 
 export default function Home({ ...props }) {
-  const { widthType } = useWindowSize();
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
-
   const [selectedProperty, setSelectedProperty] = useState("commercials");
   const [selectedCountry, setSelectedCountry] = useState("united states");
   const [selectedCity, setSelectedCity] = useState("");
-
-
-
-
 
   const handleChange = (event: any) => {
     setSelectedProperty(event.target.value); // Update state with the selected value
   };
 
-    const handleCity = (event: any) => {
+  const handleCity = (event: any) => {
     setSelectedCity(event.target.value); // Update state with the selected value
   };
 
-
-  console.log("selectedValue", selectedProperty);
-
   return (
     <>
+      <PageMeta />
+
       <Header></Header>
 
       <div className="select-list home-select-list">
@@ -85,7 +72,7 @@ export default function Home({ ...props }) {
                     value={selectedCity}
                     onChange={handleCity}
                   >
-                    <option  value="">Select City</option>
+                    <option value="">Select City</option>
                     <option value="San Jose">San Jose</option>
                     <option value="Burlingame">Burlingame</option>
                     <option value="Palo Alto">Palo Alto</option>
@@ -102,13 +89,6 @@ export default function Home({ ...props }) {
                 </div>
               </div>
               <div className="col-md-12">
-                {/* <button
-                  type="button"
-                  className="button"
-                  id="homepropertybutton"
-                >
-                  Go
-                </button> */}
                 <Link
                   href={`/${selectedProperty}?city=${selectedCity}&country=${selectedCountry}`}
                   className="button"
@@ -122,54 +102,7 @@ export default function Home({ ...props }) {
         </div>
       </div>
 
-
-
-
-<Listing />
-
-      {/* <div className="min-container home-list featured-homelist">
-        <h5 className="main-ti">Oxbridge Listings</h5>
-        <h6 className="main-pa">COMMERCIAL</h6>
-
-        <div className="selectboxx">
-        
-
-          <select
-            defaultValue={selectOption}
-            onChange={(e) => setSelectOption(e.target.value)}
-          >
-            <option value="Active">Active Listings</option>
-            <option value="">All Listings</option>
-            <option value="Sale Pending">Pending/InContract</option>
-            <option value="Recently Sold">Recently Sold</option>
-            <option value="Closed">Off Market</option>
-            <option value="Featured">Featured</option>
-          </select>
-
-          <select>
-            <option value="Active">Active Listings</option>
-            <option value="">All Listings</option>
-            <option value="Sale Pending">Pending/InContract</option>
-            <option value="Recently Sold">Recently Sold</option>
-            <option value="Closed">Off Market</option>
-            <option value="Featured">Featured</option>
-          </select>
-        </div>
-
-        <div id="member_table2">
-          <div className="rooms">
-            <Listing />
-          </div>
-        </div>
-
-        <div className="d-flex justify-content-between bd-highlight mb-3">
-          <div className="p-2 bd-highlight">
-            <a href="/commercials" className="listing-btn">
-              ALL LISTINGS
-            </a>
-          </div>
-        </div>
-      </div> */}
+      <Listing />
 
       <section className="meet-team">
         <div className="container">
@@ -210,7 +143,7 @@ export default function Home({ ...props }) {
         </div>
       </section>
 
-   <LandProperties/>
+      <LandProperties />
 
       <section className="review">
         <div className="container">

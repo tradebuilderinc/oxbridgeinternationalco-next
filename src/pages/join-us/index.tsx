@@ -11,6 +11,7 @@ import Slider from "react-slick";
 import ReviewSlider from "@components/reviewSlider";
 import { Listing } from "@components/Listing/Index";
 import { HeaderInner } from "@layouts/HeaderInner";
+import PageMeta from "@components/PageMeta";
 
 
 export default function Home({ ...props }) {
@@ -88,6 +89,7 @@ export default function Home({ ...props }) {
 
   return (
     <>
+     <PageMeta />
       <HeaderInner></HeaderInner>
       <section className="join">
         <div className="min-container">

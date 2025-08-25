@@ -543,6 +543,7 @@ div#searchList {
 }
     .home-list .full .inner img{
         height: auto;
+        border: 1px solid #e2e2e2;
     }
  .full {
  width: 100%;
@@ -584,4 +585,21 @@ div#searchList {
 
     margin-bottom: 50px;
     padding-bottom: 50px;
+}
+
+
+.slick-slide img {
+    display: block;
+    width: 100%;
+
+    object-fit: cover;
+
+}
+@media only screen and (min-width: 767px) {
+.slick-slide img {
+
+    height: 530px;
+
+}
+
 }

@@ -8,6 +8,7 @@ import { ListingData } from "@components/ListingData/Index";
 import Bookappointment from "@components/bookappointment";
 import { MainNav } from "@layouts/Header/Nav";
 import Insight from "@components/blog/insight";
+import PageMeta from "@components/PageMeta";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   console.log("ctx", ctx?.query?.city);
@@ -92,7 +93,6 @@ export default function Home({ ...props }) {
 
   const [selectedCity, setSelectedCity] = useState(query?.city);
 
-
   const handleChange = (event: any) => {
     setSelectedProperty(event.target.value); // Update state with the selected value
   };
@@ -100,20 +100,16 @@ export default function Home({ ...props }) {
     setSelectedCity(event.target.value); // Update state with the selected value
   };
 
-
   console.log("selectedCity", selectedCity);
 
   return (
     <>
       {/* <Header></Header> */}
 
-
+      <PageMeta />
       <header className="commercial-bg ddd">
-
         <MainNav></MainNav>
-        <div className="main-heading">
-          COMMERCIAL
-        </div>
+        <div className="main-heading">COMMERCIAL</div>
         <div className="view">
           <div className="container">
             <span className="first">VIEW OUR LISTINGS</span>
@@ -136,7 +132,9 @@ export default function Home({ ...props }) {
                     <option value="" disabled>
                       Property Type
                     </option>
-                    <option selected value="commercials">Commercial</option>
+                    <option selected value="commercials">
+                      Commercial
+                    </option>
                     <option value="residentials">Lands and Projects</option>
                   </select>
                 </div>
@@ -222,51 +220,57 @@ export default function Home({ ...props }) {
             <ListingData data={listing} page="commercials" />
           </div>
         </div>
-
-
       </div>
-<section className="custom-crausal comm-5">
+      <section className="custom-crausal comm-5">
         <div className="min-container">
           <h3>SERVICES</h3>
 
           <div className="row">
             <div className="col-xl-4 serviceDesc">
               <Link href="/commercials">
-              <div className="card" >
-                <img src="images/commercial-min.jpg" className="img-fluid" alt="..." />
-                <div className="card-body">
-
-                  <div className="text-info">
-                    <h4>Commercial</h4>
-                    <p>Join Oxbridge's Advisory Team that specializes in Commercial Real Estate.</p>
+                <div className="card">
+                  <img
+                    src="images/commercial-min.jpg"
+                    className="img-fluid"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <div className="text-info">
+                      <h4>Commercial</h4>
+                      <p>
+                        Join Oxbridge's Advisory Team that specializes in
+                        Commercial Real Estate.
+                      </p>
+                    </div>
                   </div>
-
                 </div>
-              </div>
               </Link>
             </div>
-                <div className="col-xl-4 serviceDesc">
-                          <Link href="/lands">
-              <div className="card" >
-                <img src="images/Land and Projects.jpg" className="img-fluid" alt="..." />
-                <div className="card-body">
-
-                  <div className="text-info">
-                    <h4>Land and Development</h4>
-                    <p>Join Oxbridge's Land and Development Team if that is your passion.</p>
+            <div className="col-xl-4 serviceDesc">
+              <Link href="/lands">
+                <div className="card">
+                  <img
+                    src="images/Land and Projects.jpg"
+                    className="img-fluid"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <div className="text-info">
+                      <h4>Land and Development</h4>
+                      <p>
+                        Join Oxbridge's Land and Development Team if that is
+                        your passion.
+                      </p>
+                    </div>
                   </div>
-
                 </div>
-              </div>
               </Link>
             </div>
           </div>
-
         </div>
       </section>
       <Bookappointment></Bookappointment>
 
-      
       <section className="blog-news slidertypesecond  homeblog bluebg  blogbg mb-5">
         <div className="min-container">
           <h3>news &amp; blogs</h3>
@@ -279,17 +283,16 @@ export default function Home({ ...props }) {
 
       <section className="custom-crausal join">
         <div className="min-container">
-
           <h5 className="inner-txt">Get an Oxbridge Edge:</h5>
           <ul className="inner-list">
+            <li>Over 40 years of experience in Commercial Real Estate</li>
             <li>
-              Over 40 years of experience in Commercial Real Estate
+              Build expertise in assets including hospitality, office, retail,
+              multifamily, industrial
             </li>
             <li>
-              Build expertise in assets including hospitality, office, retail, multifamily, industrial
-            </li>
-            <li>
-              Caters to best in className commercial, luxury residential, and land and development projects
+              Caters to best in className commercial, luxury residential, and
+              land and development projects
             </li>
           </ul>
         </div>
@@ -300,18 +303,27 @@ export default function Home({ ...props }) {
           <h5>follow us on</h5>
           <ul>
             <li>
-              <a href="https://www.linkedin.com/company/76742267/admin/" target="_blank">
+              <a
+                href="https://www.linkedin.com/company/76742267/admin/"
+                target="_blank"
+              >
                 <img src="/images/linked.png" />
               </a>
             </li>
 
             <li>
-              <a href="https://www.instagram.com/oxbridgeintco/" target="_blank">
+              <a
+                href="https://www.instagram.com/oxbridgeintco/"
+                target="_blank"
+              >
                 <img src="/images/insta.png" />
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/Oxbridge-International-Co-110421454470740" target="_blank">
+              <a
+                href="https://www.facebook.com/Oxbridge-International-Co-110421454470740"
+                target="_blank"
+              >
                 <img src="/images/facebook.png" />
               </a>
             </li>
@@ -322,7 +334,6 @@ export default function Home({ ...props }) {
             </li>
           </ul>
         </div>
-
       </section>
 
       <Footer></Footer>

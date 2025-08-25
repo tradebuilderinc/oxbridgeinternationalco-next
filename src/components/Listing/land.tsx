@@ -121,7 +121,7 @@ function LandProperties({ ...props }) {
                             src={
                               item?.photo
                                 ? item?.photo
-                                : "https://oxbridgeinternationalco.com/assets//images/noAvatar.png"
+                               : "/images/noAvatar.png"
                             }
                             alt={item?.city}
                             className="img-responsive imageLoader"

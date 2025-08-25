@@ -6,6 +6,7 @@ import LeftArrow from "@components/Slider/LeftArrowNew";
 import RightArrow from "@components/Slider/RightArrowNew";
 import { HeaderInner } from "@layouts/HeaderInner";
 import Team from "@components/Team";
+import PageMeta from "@components/PageMeta";
 
 export default function Home({ ...props }) {
   const { widthType } = useWindowSize();
@@ -25,6 +26,7 @@ export default function Home({ ...props }) {
 
   return (
     <>
+      <PageMeta />
       <HeaderInner></HeaderInner>
 
       <section className="team">
