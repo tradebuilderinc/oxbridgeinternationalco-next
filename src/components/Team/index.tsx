@@ -2,15 +2,11 @@ import { useEffect, useState } from "react";
 import SplitDescription from "../helper/splitDescription";
 import Link from "next/link";
 import { apiBaseURL } from "@config/api";
-import AdditionalInfo from "@components/MeetTeam/additionalInfo";
+import AdditionalInfo from "@components/MeetTeam/AdditionalInfo";
 
 function Team({ ...props }) {
-
-
-
-
   const [additionInfo, setAdditionInfo]: any = useState([]);
-//   console.log("props", props);
+  //   console.log("props", props);
 
   const Info = async () => {
     const response = await fetch(
@@ -22,26 +18,11 @@ function Team({ ...props }) {
     );
     const faqdata = await response.json();
     setAdditionInfo(faqdata?.data[0]?.userData);
-
   };
 
-
-
-
   useEffect(() => {
-  
-      Info();
-    
+    Info();
   }, []);
-
-
-
-
-
-
-
-
-
 
   const [doctors, setDoctors]: any = useState([]);
   const [featDoctor, setFeatDoctor]: any = useState([]);
@@ -91,8 +72,6 @@ function Team({ ...props }) {
     );
     const featuredDoctor = await featured.json();
 
-   
-
     // setFeatDoctor(featuredDoctor?.data);
 
     let userGroups: any = ourDoctor?.data;
@@ -132,9 +111,7 @@ function Team({ ...props }) {
     doctorsGroups();
   }, []);
 
-
-
-   console.log("featDoctor", featDoctor);
+  console.log("featDoctor", featDoctor);
 
   return (
     <>
@@ -146,7 +123,8 @@ function Team({ ...props }) {
                 <div className="row">
                   <div className="col-md-6">
                     <div className="inner text-right">
-                      <h5>{item?.profile?.firstName}
+                      <h5>
+                        {item?.profile?.firstName}
                         {item?.profile?.lastName}
                         {item?.profile?.jobTitle && (
                           <span>, {item?.profile?.jobTitle}</span>
@@ -168,8 +146,7 @@ function Team({ ...props }) {
                       <ul>
                         <li>LICENSE NUMBER {item?.profile?.license}</li>
                         <li>
-                          EMAIL{" "}
-                          <span>{item?.profile?.email}</span>
+                          EMAIL <span>{item?.profile?.email}</span>
                         </li>
                       </ul>
                     </div>
@@ -199,16 +176,9 @@ function Team({ ...props }) {
                   </div>
                 </div>
 
-
-
-
-<div className={`addition ${item?._id}`}> 
-
-<AdditionalInfo dataId={item?._id} mainData={additionInfo}/>
-
-
-</div>
-
+                <div className={`addition ${item?._id}`}>
+                  <AdditionalInfo dataId={item?._id} mainData={additionInfo} />
+                </div>
 
                 {/* <div className="team-list">
                   <h5>SPECIALITIES</h5>
@@ -257,7 +227,6 @@ function Team({ ...props }) {
                     show
                   </a>
                 </div> */}
-
               </div>
             );
           })}

@@ -389,7 +389,7 @@ export default function Home({ ...props }) {
 
         <div id="member_table2">
           <div className="rooms">
-            <ListingData data={listing} />
+            <ListingData data={listing} page="residentials" />
           </div>
         </div>
       </div>
