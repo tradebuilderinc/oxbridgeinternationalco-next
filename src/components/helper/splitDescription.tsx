@@ -4,7 +4,7 @@ function SplitDescription({ ...props }) {
     let { limit, des } = props;
     
 if (!limit) {
-        limit = 30;
+        limit = 60;
     
 } 
 
