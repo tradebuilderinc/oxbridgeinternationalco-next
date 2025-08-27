@@ -13,6 +13,7 @@ import { GrFormNext } from "react-icons/gr";
 import { axiosClient, axiosHandler } from "@utils/axios";
 import { apiBaseURL } from "@config/api";
 import { GetServerSidePropsContext } from "next";
+import Head from "next/head";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   let paramId: any = ctx?.query?.team;
@@ -67,7 +68,90 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 export default function Home({ ...props }) {
   return (
     <>
-      <PageMeta />
+            <Head>
+        {props?.doctor?.profile?.address?.residential?.state && (
+          <title>{props?.doctor?.profile?.address?.residential?.state}</title>
+        )}
+        {props?.doctor?.profile?.address?.residential?.streetAddress && (
+          <meta
+            name="description"
+            content={
+              props?.doctor?.profile?.address?.residential?.streetAddress
+            }
+          />
+        )}
+        {props?.doctor?.profile?.socialLinks?.yelp && (
+          <link
+            rel="canonical"
+            href={props?.doctor?.profile?.socialLinks?.yelp}
+          />
+        )}
+        {/* Og */}
+        {props?.doctor?.profile?.address?.residential?.state && (
+          <meta
+            property="og:title"
+            content={props?.doctor?.profile?.address?.residential?.state}
+          />
+        )}
+        {props?.doctor?.profile?.address?.residential?.streetAddress && (
+          <meta
+            property="og:description"
+            content={
+              props?.doctor?.profile?.address?.residential?.streetAddress
+            }
+          />
+        )}
+        {props?.doctor?.profile?.profilePic && (
+          <meta
+            property="og:image"
+            content={props?.doctor?.profile?.profilePic}
+          />
+        )}
+        {/* Twitter */}
+        {props?.doctor?.profile?.address?.residential?.state && (
+          <meta
+            property="Twitter:title"
+            content={props?.doctor?.profile?.address?.residential?.state}
+          />
+        )}
+        {props?.doctor?.profile?.address?.residential?.streetAddress && (
+          <meta
+            property="Twitter:description"
+            content={
+              props?.doctor?.profile?.address?.residential?.streetAddress
+            }
+          />
+        )}
+        {props?.doctor?.profile?.profilePic && (
+          <meta
+            property="Twitter:image"
+            content={props?.doctor?.profile?.profilePic}
+          />
+        )}
+        {/* Facebook */}
+        {props?.doctor?.profile?.address?.residential?.state && (
+          <meta
+            property="Facebook:title"
+            content={props?.doctor?.profile?.address?.residential?.state}
+          />
+        )}
+        {props?.doctor?.profile?.address?.residential?.streetAddress && (
+          <meta
+            property="Facebook:description"
+            content={
+              props?.doctor?.profile?.address?.residential?.streetAddress
+            }
+          />
+        )}
+        {props?.doctor?.profile?.profilePic && (
+          <meta
+            property="Facebook:image"
+            content={props?.doctor?.profile?.profilePic}
+          />
+        )}
+      </Head>
+
+      
       <HeaderInner></HeaderInner>
 
       <section className="pagesec">
