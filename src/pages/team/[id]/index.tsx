@@ -28,13 +28,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     axiosClient().get(`${apiBaseURL}/readMember/${paramId}`)
   );
 
-
-
   console.log("ctx?.query?.p", doctorData);
-
-
-
-
 
   let data;
 
@@ -68,90 +62,93 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 export default function Home({ ...props }) {
   return (
     <>
-            <Head>
-        {props?.doctor?.profile?.address?.residential?.state && (
-          <title>{props?.doctor?.profile?.address?.residential?.state}</title>
-        )}
-        {props?.doctor?.profile?.address?.residential?.streetAddress && (
-          <meta
-            name="description"
-            content={
-              props?.doctor?.profile?.address?.residential?.streetAddress
-            }
-          />
-        )}
-        {props?.doctor?.profile?.socialLinks?.yelp && (
-          <link
-            rel="canonical"
-            href={props?.doctor?.profile?.socialLinks?.yelp}
-          />
-        )}
-        {/* Og */}
-        {props?.doctor?.profile?.address?.residential?.state && (
-          <meta
-            property="og:title"
-            content={props?.doctor?.profile?.address?.residential?.state}
-          />
-        )}
-        {props?.doctor?.profile?.address?.residential?.streetAddress && (
-          <meta
-            property="og:description"
-            content={
-              props?.doctor?.profile?.address?.residential?.streetAddress
-            }
-          />
-        )}
-        {props?.doctor?.profile?.profilePic && (
-          <meta
-            property="og:image"
-            content={props?.doctor?.profile?.profilePic}
-          />
-        )}
-        {/* Twitter */}
-        {props?.doctor?.profile?.address?.residential?.state && (
-          <meta
-            property="Twitter:title"
-            content={props?.doctor?.profile?.address?.residential?.state}
-          />
-        )}
-        {props?.doctor?.profile?.address?.residential?.streetAddress && (
-          <meta
-            property="Twitter:description"
-            content={
-              props?.doctor?.profile?.address?.residential?.streetAddress
-            }
-          />
-        )}
-        {props?.doctor?.profile?.profilePic && (
-          <meta
-            property="Twitter:image"
-            content={props?.doctor?.profile?.profilePic}
-          />
-        )}
-        {/* Facebook */}
-        {props?.doctor?.profile?.address?.residential?.state && (
-          <meta
-            property="Facebook:title"
-            content={props?.doctor?.profile?.address?.residential?.state}
-          />
-        )}
-        {props?.doctor?.profile?.address?.residential?.streetAddress && (
-          <meta
-            property="Facebook:description"
-            content={
-              props?.doctor?.profile?.address?.residential?.streetAddress
-            }
-          />
-        )}
-        {props?.doctor?.profile?.profilePic && (
-          <meta
-            property="Facebook:image"
-            content={props?.doctor?.profile?.profilePic}
-          />
-        )}
-      </Head>
+      {props?.doctor?.profile?.address?.residential?.state ? (
+        <Head>
+          {props?.doctor?.profile?.address?.residential?.state && (
+            <title>{props?.doctor?.profile?.address?.residential?.state}</title>
+          )}
+          {props?.doctor?.profile?.address?.residential?.streetAddress && (
+            <meta
+              name="description"
+              content={
+                props?.doctor?.profile?.address?.residential?.streetAddress
+              }
+            />
+          )}
+          {props?.doctor?.profile?.socialLinks?.yelp && (
+            <link
+              rel="canonical"
+              href={props?.doctor?.profile?.socialLinks?.yelp}
+            />
+          )}
+          {/* Og */}
+          {props?.doctor?.profile?.address?.residential?.state && (
+            <meta
+              property="og:title"
+              content={props?.doctor?.profile?.address?.residential?.state}
+            />
+          )}
+          {props?.doctor?.profile?.address?.residential?.streetAddress && (
+            <meta
+              property="og:description"
+              content={
+                props?.doctor?.profile?.address?.residential?.streetAddress
+              }
+            />
+          )}
+          {props?.doctor?.profile?.profilePic && (
+            <meta
+              property="og:image"
+              content={props?.doctor?.profile?.profilePic}
+            />
+          )}
+          {/* Twitter */}
+          {props?.doctor?.profile?.address?.residential?.state && (
+            <meta
+              property="Twitter:title"
+              content={props?.doctor?.profile?.address?.residential?.state}
+            />
+          )}
+          {props?.doctor?.profile?.address?.residential?.streetAddress && (
+            <meta
+              property="Twitter:description"
+              content={
+                props?.doctor?.profile?.address?.residential?.streetAddress
+              }
+            />
+          )}
+          {props?.doctor?.profile?.profilePic && (
+            <meta
+              property="Twitter:image"
+              content={props?.doctor?.profile?.profilePic}
+            />
+          )}
+          {/* Facebook */}
+          {props?.doctor?.profile?.address?.residential?.state && (
+            <meta
+              property="Facebook:title"
+              content={props?.doctor?.profile?.address?.residential?.state}
+            />
+          )}
+          {props?.doctor?.profile?.address?.residential?.streetAddress && (
+            <meta
+              property="Facebook:description"
+              content={
+                props?.doctor?.profile?.address?.residential?.streetAddress
+              }
+            />
+          )}
+          {props?.doctor?.profile?.profilePic && (
+            <meta
+              property="Facebook:image"
+              content={props?.doctor?.profile?.profilePic}
+            />
+          )}
+        </Head>
+      ) : (
+        <PageMeta />
+      )}
 
-      
       <HeaderInner></HeaderInner>
 
       <section className="pagesec">
@@ -171,16 +168,14 @@ export default function Home({ ...props }) {
                   />
                 </div>
 
-
- <div className="pt-3">
-                        <p><b>LICENSE NUMBER</b> {props?.doctor?.profile?.license}
-                            <br/>
-                         <b> EMAIL </b><span>{props?.doctor?.profile?.email}</span>
-                        </p>
-                      </div>
-
-
-
+                <div className="pt-3">
+                  <p>
+                    <b>LICENSE NUMBER</b> {props?.doctor?.profile?.license}
+                    <br />
+                    <b> EMAIL </b>
+                    <span>{props?.doctor?.profile?.email}</span>
+                  </p>
+                </div>
               </div>
               <div className="col-lg-7">
                 <div className="leftspe ps-lg-4">
@@ -203,8 +198,6 @@ export default function Home({ ...props }) {
                         __html: props?.doctor?.profile?.bio,
                       }}
                     ></div>
-
-             
                   </div>
                 </div>
               </div>
