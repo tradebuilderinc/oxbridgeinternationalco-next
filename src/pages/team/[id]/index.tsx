@@ -89,9 +89,9 @@ export default function Home({ ...props }) {
 
 
  <div className="pt-3">
-                        <p>LICENSE NUMBER {props?.doctor?.profile?.license}
+                        <p><b>LICENSE NUMBER</b> {props?.doctor?.profile?.license}
                             <br/>
-                          EMAIL <span>{props?.doctor?.profile?.email}</span>
+                         <b> EMAIL </b><span>{props?.doctor?.profile?.email}</span>
                         </p>
                       </div>
 
