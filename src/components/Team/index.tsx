@@ -124,7 +124,7 @@ function Team({ ...props }) {
                   <div className="col-md-6">
                     <div className="inner text-right">
                       <h5>
-                        {item?.profile?.firstName}
+                        {item?.profile?.firstName}{' '}
                         {item?.profile?.lastName}
                         {item?.profile?.jobTitle && (
                           <span>, {item?.profile?.jobTitle}</span>
@@ -138,6 +138,19 @@ function Team({ ...props }) {
                           {item?.profile?.bio && (
                             <div className="team-card-info">
                               <SplitDescription des={item?.profile?.bio} />
+                              <div className="pt-4">
+                                <Link
+                                  className="readmore"
+                                  href={
+                                    item?.profile?.socialLinks?.website &&
+                                    item?.profile?.socialLinks?.website !== ""
+                                      ? `/team/${item?.profile?.socialLinks?.website}?p=${item?._id}`
+                                      : `team/${item?._id}`
+                                  }
+                                >
+                                  Read Bio{" "}
+                                </Link>{" "}
+                              </div>
                             </div>
                           )}
                         </p>

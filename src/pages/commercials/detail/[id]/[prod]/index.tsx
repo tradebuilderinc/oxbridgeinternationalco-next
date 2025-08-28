@@ -120,7 +120,7 @@ export default function Home({ ...props }) {
     slidesToShow: 3,
     slidesToScroll: 1,
     mobileFirst: true,
-      arrow: true,
+    arrow: true,
     nextArrow: (
       <RightArrow
         to="next"
@@ -169,7 +169,7 @@ export default function Home({ ...props }) {
 
   var settingLists = {
     dots: false,
-     arrow: true,
+    arrow: true,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 8000,
@@ -177,7 +177,7 @@ export default function Home({ ...props }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     mobileFirst: true,
-        nextArrow: (
+    nextArrow: (
       <RightArrow
         to="next"
         className=""
@@ -223,8 +223,6 @@ export default function Home({ ...props }) {
     <>
       <HeaderInner></HeaderInner>
 
-  
-
       <section className="lis-detail-box  slidertypefirst  homeblog bluebg  blogbg ">
         <div className="min-container">
           <h3>
@@ -261,6 +259,7 @@ export default function Home({ ...props }) {
                       }
                       alt={listing?.streetName}
                       className="img-fluid"
+                      style={{width:'100%'}}
                     />
                   </>
                 )}
@@ -305,9 +304,7 @@ export default function Home({ ...props }) {
             </div>
           </div>
           <div className="col-md-5">
-  <AgentInfo></AgentInfo>  
-
-       
+            <AgentInfo></AgentInfo>
           </div>
         </div>
       </section>
@@ -333,7 +330,7 @@ export default function Home({ ...props }) {
                                     src={
                                       item?.photo
                                         ? item?.photo
-                                       : "/images/noAvatar.png"
+                                        : "/images/noAvatar.png"
                                     }
                                     alt={item?.city}
                                     className="img-responsive imageLoader"
@@ -348,7 +345,7 @@ export default function Home({ ...props }) {
                                         item?.listPrice == "00" ||
                                         item?.listPrice == 0 ? (
                                           <span>
-                                          <br/>  Call for Price
+                                            <br /> Call for Price
                                           </span>
                                         ) : (
                                           <FormatPrice

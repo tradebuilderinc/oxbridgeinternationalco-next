@@ -254,6 +254,7 @@ export default function Home({ ...props }) {
                       }
                       alt={listing?.streetName}
                       className="img-fluid"
+                       style={{width:'100%'}}
                     />
                   </>
                 )}
