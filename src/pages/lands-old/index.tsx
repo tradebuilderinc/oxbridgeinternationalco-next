@@ -16,8 +16,6 @@ import { ListingData } from "@components/ListingData/Index";
 import Bookappointment from "@components/bookappointment";
 import { MainNav } from "@layouts/Header/Nav";
 import PageMeta from "@components/PageMeta";
-import { ListingWithFilter } from "@components/ListingWithFilter/Index";
-import { ListingWithFilterLand } from "@components/ListingWithFilterLand/Index";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   console.log("ctx", ctx?.query?.city);
@@ -33,7 +31,6 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     skip: 0,
     filter: {
       uri: "listings",
-      mlsStatus: "active",
       propertySubType: [
         "Land"
       ],
@@ -88,7 +85,7 @@ export default function Home({ ...props }) {
     };
   }, ["/js/contact.js"]);
 
-  const [selectedProperty, setSelectedProperty] = useState("lands");
+  const [selectedProperty, setSelectedProperty] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("united states");
   const [selectedCity, setSelectedCity] = useState(query?.city);
 
@@ -100,7 +97,7 @@ export default function Home({ ...props }) {
     setSelectedCity(event.target.value); // Update state with the selected value
   };
 
-
+  console.log("selectedCity", selectedCity);
 
   return (
     <>
@@ -120,7 +117,7 @@ export default function Home({ ...props }) {
         </div>
       </header>
 
-        <div className="select-list home-select-list">
+      <div className="select-list home-select-list">
         <div className="min-container">
           <form className="search-form">
             <div className="row">
@@ -131,9 +128,7 @@ export default function Home({ ...props }) {
                     value={selectedProperty}
                     onChange={handleChange}
                   >
-                    <option value="" disabled>
-                      Property Type
-                    </option>
+                    <option selected value="">Property Type </option>
                     <option value="commercials">Commercial</option>
                     <option value="residentials">Lands and Projects</option>
                   </select>
@@ -180,29 +175,55 @@ export default function Home({ ...props }) {
                 </div>
               </div>
               <div className="col-md-12">
-                <Link
+                {/* <button
+                  type="button"
+                  className="button"
+                  id="homepropertybutton"
+                >
+                  Go
+                </button> */}
+                <a
                   href={`/${selectedProperty}?city=${selectedCity}&country=${selectedCountry}`}
                   className="button"
                   id="homepropertybutton"
                 >
                   Go
-                </Link>
+                </a>
               </div>
             </div>
           </form>
         </div>
       </div>
 
-      <ListingWithFilterLand listingData={props} />
-{/* 
+      <div className="min-container home-list featured-homelist homefeaturedlist">
+        {/* <h5 className="main-ti">Oxbridge Listings</h5>
+        <h6 className="main-pa">COMMERCIAL</h6> */}
+
+        {/* <div className="selectboxx">
+          <select>
+            <option value="Active">Active Listings</option>
+            <option value="">All Listings</option>
+            <option value="Sale Pending">Pending/InContract</option>
+            <option value="Recently Sold">Recently Sold</option>
+            <option value="Closed">Off Market</option>
+            <option value="Featured">Featured</option>
+          </select>
+        </div> */}
+
+        <div id="member_table2">
+          <div className="rooms">
+            <ListingData data={listing} page="lands" />
+          </div>
+        </div>
+
         <div className="d-flex justify-content-between bd-highlight mb-3">
           <div className="p-2 bd-highlight">
             <a href="/commercials" className="listing-btn">
               ALL LISTINGS
             </a>
           </div>
-        </div> */}
-    
+        </div>
+      </div>
       <section className="custom-crausal comm-5">
         <div className="min-container">
           <h3>SERVICES</h3>

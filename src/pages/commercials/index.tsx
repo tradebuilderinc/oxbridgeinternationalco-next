@@ -9,6 +9,8 @@ import Bookappointment from "@components/bookappointment";
 import { MainNav } from "@layouts/Header/Nav";
 import Insight from "@components/blog/insight";
 import PageMeta from "@components/PageMeta";
+import { Listing } from "@components/Listing/Index";
+import { ListingWithFilter } from "@components/ListingWithFilter/Index";
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   console.log("ctx", ctx?.query?.city);
@@ -30,6 +32,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     skip: 0,
     filter: {
       uri: "listings",
+      mlsStatus: "active",
       propertySubType: [
         "Industrial",
         "Office",
@@ -61,6 +64,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     data = {
       listing: listing?.data,
       query: ctx?.query,
+      credentials: credentials,
     };
   } else {
     data = {};
@@ -72,10 +76,11 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 }
 
 export default function Home({ ...props }) {
-  const { listing, query } = props;
+  const { listing, query, credentials } = props;
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "/js/contact.js";
@@ -118,7 +123,7 @@ export default function Home({ ...props }) {
         </div>
       </header>
 
-      <div className="select-list home-select-list" id="searchmain">
+      <div className="select-list home-select-list">
         <div className="min-container">
           <form className="search-form">
             <div className="row">
@@ -132,9 +137,7 @@ export default function Home({ ...props }) {
                     <option value="" disabled>
                       Property Type
                     </option>
-                    <option selected value="commercials">
-                      Commercial
-                    </option>
+                    <option value="commercials">Commercial</option>
                     <option value="residentials">Lands and Projects</option>
                   </select>
                 </div>
@@ -180,15 +183,8 @@ export default function Home({ ...props }) {
                 </div>
               </div>
               <div className="col-md-12">
-                {/* <button
-                  type="button"
-                  className="button"
-                  id="homepropertybutton"
-                >
-                  Go
-                </button> */}
                 <Link
-                  href={`/${selectedProperty}?city=${selectedCity}&country=${selectedCountry}#searchmain`}
+                  href={`/${selectedProperty}?city=${selectedCity}&country=${selectedCountry}`}
                   className="button"
                   id="homepropertybutton"
                 >
@@ -200,27 +196,8 @@ export default function Home({ ...props }) {
         </div>
       </div>
 
-      <div className="min-container home-list featured-homelist homefeaturedlist">
-        {/* <h5 className="main-ti">Oxbridge Listings</h5>
-        <h6 className="main-pa">COMMERCIAL</h6>
+      <ListingWithFilter listingData={props} />
 
-        <div className="selectboxx">
-          <select>
-            <option value="Active">Active Listings</option>
-            <option value="">All Listings</option>
-            <option value="Sale Pending">Pending/InContract</option>
-            <option value="Recently Sold">Recently Sold</option>
-            <option value="Closed">Off Market</option>
-            <option value="Featured">Featured</option>
-          </select>
-        </div> */}
-
-        <div id="member_table2 ">
-          <div className="rooms">
-            <ListingData data={listing} page="commercials" />
-          </div>
-        </div>
-      </div>
       <section className="custom-crausal comm-5">
         <div className="min-container">
           <h3>SERVICES</h3>

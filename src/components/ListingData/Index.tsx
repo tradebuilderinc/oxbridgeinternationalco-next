@@ -8,13 +8,20 @@ import FormatPrice from "@components/helper/FormatPrice";
 function ListingData({ ...props }) {
 
   const { data } = props?.data;
-  console.log('check list',data);
+
+
+
+  const [allListing, setAllListing] = useState(props?.data?.data);
+
+  console.log('check list allListing',allListing);
+
+
 
 
   return (
     <>
-  {data &&
-        data?.slice(0, 30)?.map((item: any, index: any) => {
+  {allListing &&
+        allListing?.slice(0, 30)?.map((item: any, index: any) => {
           return (
             <div className="full" key={index}>
               <div className="item">
