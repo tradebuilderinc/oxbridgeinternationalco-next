@@ -5,8 +5,12 @@ import { Image } from "react-bootstrap";
 import { apiBaseURL } from "@config/api";
 import FormatPrice from "@components/helper/FormatPrice";
 
-function Listing({ ...props }) {
-  const [list, setList] = useState([]);
+function ListingWithFilterLand({ ...props }) {
+  const { data } = props?.listingData?.listing;
+
+  console.log("ListingWithFilterLand", props?.listingData);
+
+  const [list, setList] = useState(data);
   const [mlsStatus, setMlsStatus] = useState("active");
   const [loading, setLoading] = useState("Active");
 
@@ -19,9 +23,15 @@ function Listing({ ...props }) {
       limit: 100,
       originatingSystemName: "myListings",
       skip: 0,
+
       filter: {
         uri: "listings",
         mlsStatus: mlsStatus,
+        propertySubType: [
+        "Land"
+      ],
+        city: props?.listingData?.query?.city,
+        country: "united states",
       },
     };
 
@@ -58,15 +68,11 @@ function Listing({ ...props }) {
     ListingData(mlsStatus);
   }
 
-  useEffect(() => {
-    ListingData("active");
-  }, []);
-
   return (
     <>
       <div className="min-container home-list featured-homelist homefeaturedlist">
         <h5 className="main-ti">Oxbridge Listings</h5>
-        <h6 className="main-pa">COMMERCIAL</h6>
+        <h6 className="main-pa">Land and Development</h6>
 
         <div className="selectboxx">
           <select
@@ -75,7 +81,6 @@ function Listing({ ...props }) {
           >
             <option value="active">Active Listings</option>
             <option value="">All Listings</option>
-
             <option value="pending">Pending/InContract</option>
             <option value="closed">Recently Sold</option>
             <option value="deal room">Off Market</option>
@@ -93,7 +98,7 @@ function Listing({ ...props }) {
           {loading !== "active" ? (
             <div className="rooms">
               {list &&
-                list?.slice(0, 30)?.map((item: any, index: any) => {
+                list?.map((item: any, index: any) => {
                   return (
                     <div className="full" key={index}>
                       <div className="item">
@@ -144,7 +149,7 @@ function Listing({ ...props }) {
                 })}
             </div>
           ) : (
-            <></>
+            <> </>
           )}
         </div>
 
@@ -160,4 +165,4 @@ function Listing({ ...props }) {
   );
 }
 
-export { Listing };
+export { ListingWithFilterLand };
