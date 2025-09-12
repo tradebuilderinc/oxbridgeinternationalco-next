@@ -35,7 +35,7 @@ function ListingData({ ...props }) {
                       src={
                         item?.photo
                           ? item?.photo
-                          : "/images/noAvatar.png"
+                          : "/images/no-image-found.jpg"
                       }
                       alt={item?.city}
                       className="img-responsive imageLoader"

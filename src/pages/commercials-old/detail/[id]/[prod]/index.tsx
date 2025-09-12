@@ -255,7 +255,7 @@ export default function Home({ ...props }) {
                       src={
                         listing?.photoUrls
                           ? listing?.photoUrls[0]
-                          : "/images/noAvatar.png"
+                          : "/images/no-image-found.jpg"
                       }
                       alt={listing?.streetName}
                       className="img-fluid"
@@ -330,7 +330,7 @@ export default function Home({ ...props }) {
                                     src={
                                       item?.photo
                                         ? item?.photo
-                                        : "/images/noAvatar.png"
+                                        : "/images/no-image-found.jpg"
                                     }
                                     alt={item?.city}
                                     className="img-responsive imageLoader"

@@ -30,8 +30,8 @@ function ListingWithFilter({ ...props }) {
         propertySubType: [
           "Industrial",
           "Office",
+          "Retail",
           "Hotel & Motel",
-          "Land",
           "Agricultural",
           "Multi-Family",
         ],
@@ -119,7 +119,7 @@ function ListingWithFilter({ ...props }) {
                               src={
                                 item?.photo
                                   ? item?.photo
-                                  : "/images/noAvatar.png"
+                                  : "/images/no-image-found.jpg"
                               }
                               alt={item?.city}
                               className="img-responsive imageLoader"
@@ -129,7 +129,7 @@ function ListingWithFilter({ ...props }) {
                             <h5>
                               {" "}
                               {item?.city}{" "}
-                              {`${item?.stateOrProvince}${item?.postalCode}`}
+                              {`${item?.stateOrProvince} ${item?.postalCode}`}
                             </h5>
                             <h5>
                               {item?.listPrice == "0" ||
@@ -158,13 +158,13 @@ function ListingWithFilter({ ...props }) {
           )}
         </div>
 
-        <div className="d-flex justify-content-between bd-highlight mb-3">
+        {/* <div className="d-flex justify-content-between bd-highlight mb-3">
           <div className="p-2 bd-highlight">
             <a href="/commercials" className="listing-btn">
               ALL LISTINGS
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
