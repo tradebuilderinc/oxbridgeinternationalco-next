@@ -35,9 +35,9 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
       mlsStatus: "active",
       propertySubType: [
         "Industrial",
+        "Retail",
         "Office",
         "Hotel & Motel",
-        "Land",
         "Agricultural",
         "Multi-Family",
       ],
@@ -59,12 +59,14 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     )
   );
 
+  console.log('listing', listing?.data);
+
   let data;
   if (listing?.success) {
     data = {
       listing: listing?.data,
-      query: ctx?.query,
-      credentials: credentials,
+       query: ctx?.query,
+       //credentials: credentials,
     };
   } else {
     data = {};
@@ -76,8 +78,8 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 }
 
 export default function Home({ ...props }) {
-  const { listing, query, credentials } = props;
 
+  const { listing, query, credentials } = props;
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
 
@@ -105,7 +107,7 @@ export default function Home({ ...props }) {
     setSelectedCity(event.target.value); // Update state with the selected value
   };
 
-  console.log("selectedCity", selectedCity);
+  // console.log("selectedCity", selectedCity);
 
   return (
     <>

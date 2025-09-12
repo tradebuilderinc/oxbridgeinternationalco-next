@@ -95,31 +95,17 @@ export default function Home({ ...props }) {
           </div>
 
           <p className="second">
-            The landscape of the Commercial Real Estate market is vastly
-            changing. Oxbridge International Co. is the latest and remarkable
-            part of this development. With over 40 years of experience in our
-            brokerage arena, we have developed International Network
-            Syndications expanding in China, United Kingdom, and Dubai. Our team
-            consists of expert negotiators who specialize in asset classNamees
-            like hospitality, office, retail, multifamily, industrial and land
-            and development. We utilize the latest technology and data to
-            analyze and predict market trends to optimize returns for our
-            clients.
+            The landscape of the Commercial Real Estate market is vastly changing. Oxbridge International Co. is the latest and remarkable part of this development. With over 40 years of experience in our brokerage arena, we have developed International Network Syndications expanding in China, United Kingdom, and Dubai. Our team consists of expert negotiators who specialize in asset classes like hospitality, office, retail, multifamily, industrial and land and development. We utilize the latest technology and data to analyze and predict market trends to optimize returns for our clients.
+
           </p>
           <p className="second">
-            Oxbridge International Co. engages their international and domestic
-            affiliates to help secure ties and alliances in all global markets.
-            We also have established domestic affiliations including Austin,
-            Chicago, Seattle, and Miami. Over the years our team members have
-            been a vital source for acquisitions and portfolio management for
-            our international and domestic clients.{" "}
+            Oxbridge International Co. engages their international and domestic affiliates to help secure ties and alliances in all global markets. We also have established domestic affiliations including Austin, Chicago, Seattle, and Miami. Over the years our team members have been a vital source for acquisitions and portfolio management for our international and domestic clients.
+
           </p>
 
           <p className="second">
-            Commercial Real Estate is going to reach newer heights in the coming
-            years. If you desire to maximize or expand your real estate
-            portfolio, allow Oxbridge International to become an integral part
-            of your team.{" "}
+           Commercial Real Estate is going to reach newer heights in the coming years. If you desire to maximize or expand your real estate portfolio, allow Oxbridge International to become an integral part of your team.
+
           </p>
         </div>
       </section>

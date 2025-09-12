@@ -109,7 +109,7 @@ function Listing({ ...props }) {
                               src={
                                 item?.photo
                                   ? item?.photo
-                                  : "/images/noAvatar.png"
+                                  : "/images/no-image-found.jpg"
                               }
                               alt={item?.city}
                               className="img-responsive imageLoader"
@@ -119,7 +119,7 @@ function Listing({ ...props }) {
                             <h5>
                               {" "}
                               {item?.city}{" "}
-                              {`${item?.stateOrProvince}${item?.postalCode}`}
+                              {`${item?.stateOrProvince} ${item?.postalCode}`}
                             </h5>
                             <h5>
                               {item?.listPrice == "0" ||
