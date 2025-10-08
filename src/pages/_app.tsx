@@ -35,6 +35,19 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
+         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-7N1W6KEWJF"
+        ></script>
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-7N1W6KEWJF');`,
+          }}
+        ></script>
       </Head>
       <Component {...pageProps} />{" "}
     </main>
